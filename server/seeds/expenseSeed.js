@@ -1,4 +1,4 @@
-const expenseData = require("../seeds/expenseSeed");
+const expenseData = require("../seeds_data/expenseData");
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries

@@ -3,7 +3,7 @@ const bookshelf = require("../bookshelf");
 const Expense = bookshelf.model("Savings", {
   tableName: "savings",
   goals() {
-    return this.hasMany("goals");
+    return this.belongsTo("goals");
   },
 });
 

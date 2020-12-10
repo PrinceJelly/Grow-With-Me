@@ -1,20 +1,20 @@
 const goalsData = require("../seeds_data/goalsData");
-const savingsData = require("../seed_data/savingsData");
+const savingsData = require("../seeds_data/savingsData");
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("goalsData")
+  return knex("goals")
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("goalsData").insert(goalsData);
+      return knex("goals").insert(goalsData);
     })
     .then(() => {
-      return knex("savingsData").del();
+      return knex("savings").del();
     })
     .then(() => {
       // Inserts seed entries
-      return knex("goalsData")
+      return knex("goals")
         .pluck("id")
         .then((goalsId) => {
           return goalsId;

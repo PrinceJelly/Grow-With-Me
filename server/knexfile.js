@@ -7,4 +7,5 @@ module.exports = {
     database: "gwmdb",
     charset: "utf8",
   },
+  debug: true,
 };
