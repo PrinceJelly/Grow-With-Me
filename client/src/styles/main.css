@@ -238,12 +238,117 @@
   font-display: swap;
 }
 
-html {
-  font-family: "Exo 2";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-family: "Playfair Display";
-  font-weight: bolder;
+html {
+  font-family: "Exo 2";
+  background-color: #f2f7f5;
+}
+
+.home {
+  position: relative;
+  height: 100%;
+}
+
+.home__main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 50px 0px 0px 0px;
+}
+
+.home__title {
+  bottom: 0;
+  right: 0;
+  font-size: 60px;
+  color: #faae2b;
+  position: absolute;
+}
+
+.react-calendar {
+  height: 775px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f2f7f5;
+}
+
+.react-calendar__navigation {
+  width: 100%;
+  height: 35px;
+}
+
+.react-calendar__navigation__label {
+  font-size: large;
+  font-family: "Exo 2";
+  background-color: pink;
+  border: none;
+}
+
+.react-calendar__navigation__arrow {
+  width: 10%;
+  background-color: plum;
+  border: none;
+  font-size: larger;
+}
+
+.react-calendar__navigation:enabled {
+  background-color: pink;
+}
+
+.react-calendar__tile {
+  width: 60px;
+  height: 80px;
+  font-size: larger;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  border: none;
+}
+
+.react-calendar__tile:enabled {
+  background-color: pink;
+}
+
+.react-calendar__tile:enabled:focus {
+  background-color: salmon;
+}
+
+.react-calendar .react-calendar__tile--range {
+  background-color: salmon;
+}
+
+.header {
+  background-color: #006d77;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.menu {
+  background-color: #83c5be;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #193d41;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  left: 0;
 }
 /*# sourceMappingURL=main.css.map */

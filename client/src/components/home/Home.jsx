@@ -1,12 +1,18 @@
 import Menu from "../sidebar/Menu";
-import Calender from "../home/Calender";
+import Calendar from "./Calendar";
+import Header from "../home/Header";
+import Footer from "../home/Footer";
 export default function Home() {
   return (
-    <main>
+    <main className="home">
+      <Header />
       {/* there's a part here, where i will be implement a side bar that takes props depending on which month has been selected*/}
-      <h1>Grow With Me.</h1>
-      <Calender />
-      <Menu />
+      <div className="home__main-container">
+        <h1 className="home__title">Grow With Me.</h1>
+        <Menu />
+        <Calendar />
+      </div>
+      <Footer />
     </main>
   );
 }

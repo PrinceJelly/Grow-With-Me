@@ -1,21 +1,25 @@
 import Calendar from "react-calendar";
 import React, { useState } from "react";
+import CalendarPopUp from "./CalendarPopUp";
 
 export default function Calender() {
-  const [value, onChange] = useState(new Date());
+  const [selectedValue, setSelectedValue] = useState(new Date(), []);
 
+  console.log({ selectedValue });
   return (
     /* around here there's a drop down menu for the date range component, it'll greatly change with scss*/
-    <Calendar
-      className="Calender"
-      value={value}
-      onChange={onChange}
-      selectRange={true}
-      maxDate={new Date()}
-      minDate={new Date(2019, 11, 31)}
-      next2Label={null}
-      prev2Label={null}
-    />
+    <section>
+      <Calendar
+        onChange={setSelectedValue}
+        value={selectedValue}
+        selectRange={true}
+        maxDate={new Date()}
+        minDate={new Date(2019, 11, 31)}
+        next2Label={null}
+        prev2Label={null}
+      />
+      <CalendarPopUp className="date-alert" selectedValue={selectedValue} />
+    </section>
   );
 }
 //add styling for the hover effect when choosing date range

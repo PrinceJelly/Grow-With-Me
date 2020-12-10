@@ -1,0 +1,46 @@
+.react-calendar {
+  height: 775px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f2f7f5;
+
+  &__navigation {
+    width: 100%;
+    height: 35px;
+    &__label {
+      font-size: large;
+      font-family: "Exo 2";
+      background-color: pink;
+      border: none;
+    }
+    &__arrow {
+      width: 10%;
+      background-color: plum;
+      border: none;
+      font-size: larger;
+    }
+    &:enabled {
+      background-color: pink;
+    }
+  }
+
+  &__tile {
+    width: 60px;
+    height: 80px;
+    font-size: larger;
+    display: flex;
+    padding: 10px;
+    border: none;
+
+    &:enabled {
+      background-color: pink;
+      &:focus {
+        background-color: salmon;
+      }
+    }
+  }
+
+  .react-calendar__tile--range {
+    background-color: salmon;
+  }
+}

@@ -30,28 +30,29 @@ export default function SideBar({ setShowing }) {
   return (
     <aside>
       <Button handleClick={() => setShowing(false)}>Close Menu</Button>
+
+      <section className="page">
+        {newEntryPage ? <AddNewEntry newPageShowing={newEntryShowing} /> : ""}
+        {goalsPage ? <Goals newPageShowing={goalsPageShowing} /> : ""}
+        {statsPage ? <Stats newPageShowing={statsPageShowing} /> : ""}
+      </section>
+
       <ul className="navigation">
         <li>
           <Button id="newEntryShowing" handleClick={handleShowing}>
             Add a new entry
           </Button>
-          {newEntryPage ? <AddNewEntry newPageShowing={newEntryShowing} /> : ""}
         </li>
-
         <li>
           <Button id="goalsPageShowing" handleClick={handleShowing}>
             My goals
           </Button>
-          {goalsPage ? <Goals newPageShowing={goalsPageShowing} /> : ""}
         </li>
-
         <li>
           <Button id="statsPageShowing" handleClick={handleShowing}>
             Stats
           </Button>
-          {statsPage ? <Stats newPageShowing={statsPageShowing} /> : ""}
         </li>
-
         <li>
           <Button>About</Button>
         </li>
