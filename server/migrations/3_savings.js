@@ -2,9 +2,8 @@ exports.up = (knex) => {
   return knex.schema.createTable("savings", (table) => {
     table.increments("id").primary();
     table.string("label").notNullable().defaultTo("Savings");
-    table.string("type").notNullable();
     table
-      .integer("goals_id")
+      .integer("goal_id")
       .unsigned()
       .notNullable()
       .references("id")

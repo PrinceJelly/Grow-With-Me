@@ -1,12 +1,12 @@
 const bookshelf = require("../bookshelf");
 
-const Expense = bookshelf.model("Savings", {
+const Saving = bookshelf.model("Saving", {
   tableName: "savings",
-  goals() {
-    return this.belongsTo("goals");
+  goals: function () {
+    return this.belongsTo("Goal");
   },
 });
 
-module.exports = Savings;
+module.exports = Saving;
 
 //ask about this later not sure if I made this model right

@@ -1,9 +1,10 @@
 const Goals = require("../models/goalsModel");
-
+const Savings = require("../models/savingsModel");
 /********************GET ALL GOALS******************/
 
 function get(req, res) {
-  Goals.where(req.query)
+  // res.send("hello");
+  Goals.where({})
     .fetchAll({ withRelated: ["savings"] })
     .then((goal) => {
       res.status(200).json(goal);
@@ -14,12 +15,12 @@ function get(req, res) {
 function post(req, res) {
   new Goals({
     label: "My Goals:",
-    type: req.body.type,
+    type: req.body.type || "",
     goal: req.body.goal,
   })
-    .save({ body: req.body }, { patch: true })
-    .then(() => {
-      res.status(201).json({ newGoal });
+    .save()
+    .then((newGoals) => {
+      res.status(201).json({ newGoals });
     })
     .catch((err) => console.error(err));
 }
@@ -44,3 +45,5 @@ function del(req, res) {
     });
 }
 /*It didn't make sense to add a patch after going reviewing it again, the user should might as well delete the goal instead and start anew */
+
+module.exports = { get, post, getById, del };

@@ -3,7 +3,8 @@ const Expense = require("../models/expenseModel");
 /****************GET ALL EXPENSES*********************/
 
 function get(req, res) {
-  Expense.where(req.query).then((expense) => {
+  console.log(req);
+  Expense.fetchAll().then((expense) => {
     res.status(200).json(expense);
   });
 }
@@ -51,3 +52,5 @@ function del(req, res) {
       res.status(200).json({ deletedExpense });
     });
 }
+
+module.exports = { get, post, getById, patch, del };

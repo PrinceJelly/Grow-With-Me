@@ -1,10 +1,10 @@
 const bookshelf = require("../bookshelf");
 
-const Expense = bookshelf.model("Goals", {
-  tableName: "goal",
+const Goal = bookshelf.model("Goal", {
+  tableName: "goals",
   savings: function () {
-    return this.hasMany("Savings");
+    return this.hasMany("Saving");
   },
 });
 
-module.exports = Goals;
+module.exports = Goal;

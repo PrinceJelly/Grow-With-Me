@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/savings", expensesRoute);
-app.use("/expenses", savingsRoute);
+app.use("/savings", savingsRoute);
 app.use("/goals", goalRoute);
+app.use("/expenses", expensesRoute);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}.`);

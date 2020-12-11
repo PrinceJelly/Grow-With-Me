@@ -1,18 +1,6 @@
 module.exports = [
-  {
-    label: "Savings",
-    type: "House",
-    saved: 50.0,
-  },
-  {
-    label: "Savings",
-    type: "Car",
-    saved: 100.0,
-  },
-  {
-    label: "Savings",
-    type: "School",
-    saved: 500.0,
-  },
+  { id: 1, label: "Savings", goal_id: 1, saved: 50.0 },
+  { id: 2, label: "Savings", goal_id: 2, saved: 100.0 },
+  { id: 3, label: "Savings", goal_id: 3, saved: 500.0 },
 ];
 //running into an issue for the ids, goal id specfically.
