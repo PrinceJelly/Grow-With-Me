@@ -1,1 +1,13 @@
-<svg id="Plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 308"><defs><style>.cls-1{opacity:0.5;}.cls-2{fill:#f2f2f2;}</style></defs><title>icons</title><g class="cls-1"><path class="cls-2" d="M151,111v85c0,11.58,18,11.6,18,0V111c0-11.58-18-11.6-18,0Z"/></g><path class="cls-2" d="M197,144H122c-11.58,0-11.6,18,0,18h75c11.58,0,11.6-18,0-18Z"/></svg>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<g opacity="0.5">
+<path opacity="0.5" d="M10.0147 2.06402L10.158 21.9883C10.1775 24.7027 14.1203 24.6809 14.1007 21.9618L13.9574 2.03755C13.9379 -0.676837 9.9951 -0.655053 10.0147 2.06402Z" fill="#F2F2F2"/>
+</g>
+<path d="M20.1178 10.0122L3.88176 10.1176C1.37491 10.1339 1.40075 14.1884 3.91193 14.1721L20.148 14.0667C22.6548 14.0505 22.629 9.99592 20.1178 10.0122Z" fill="#F2F2F2"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>

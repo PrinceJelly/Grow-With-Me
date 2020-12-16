@@ -1,6 +1,7 @@
 import HomePage from "./components/home/Home";
-import Hero from "./components/Hero";
+import Hero from "./components/hero/Hero";
 import { Route, Switch, Redirect } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
 
 function App() {
   return (

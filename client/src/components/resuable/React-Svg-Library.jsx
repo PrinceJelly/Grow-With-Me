@@ -5,7 +5,7 @@ export default function Icon({ addClass, name }) {
   return (
     <ReactSVG
       className={addClass ? addClass : "IconSVG"}
-      src={`/#/${name}`}
+      src={`/SVG/${name}`}
       wrapper="span"
     />
   );

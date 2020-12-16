@@ -1,6 +1,18 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/extends";
+@import "./base/animations";
 @import "./base/typography";
+
+@import "./components/button";
+@import "./components/progress-bar";
 @import "./themes/theme";
+
 @import "./layout/calendar";
 @import "./layout/header";
 @import "./layout/menu";
 @import "./layout/footer";
+
+@import "./pages/hero";
+@import "./pages/home";
+@import "./pages/main-menu";

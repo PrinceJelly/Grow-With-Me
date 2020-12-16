@@ -8,7 +8,6 @@ export default function Home() {
       <Header />
       {/* there's a part here, where i will be implement a side bar that takes props depending on which month has been selected*/}
       <div className="home__main-container">
-        <h1 className="home__title">Grow With Me.</h1>
         <Menu />
         <Calendar />
       </div>

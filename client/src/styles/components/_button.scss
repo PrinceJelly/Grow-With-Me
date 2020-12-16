@@ -1,0 +1,59 @@
+.btn__start {
+  @extend .polygon;
+  @include animation-spin;
+  @extend .no-border-outline;
+  width: 150px;
+  height: 150px;
+  background-color: $button-start;
+  animation: spin 15s linear infinite;
+
+  &:hover {
+    background-color: $button-focus-clicked-start;
+  }
+  &:focus {
+    @extend .no-border-outline;
+  }
+
+  &__container {
+    @include flex;
+    @extend .add-shadow-btn;
+    position: relative;
+  }
+  &__txt {
+    position: absolute;
+    z-index: 1;
+    font-size: larger;
+    color: $secondary-font;
+  }
+}
+
+.btn__CTA {
+  @extend .btn-global;
+  @extend .font;
+}
+
+.btn__open {
+  @extend .no-border-outline;
+  background-color: none;
+  @include flex();
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 2vw;
+  height: 100%;
+  &_txt {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+.btn__next {
+  font-size: larger;
+  width: 30vw;
+  height: 5vh;
+  @extend .font;
+  @extend .no-border-outline;
+  text-transform: uppercase;
+  background-color: transparent;
+}

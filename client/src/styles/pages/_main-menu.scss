@@ -1,0 +1,13 @@
+.main-menu {
+  &__pet-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28.9%;
+    height: 250px;
+    background-image: url(../../src/assets/img/petbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: white 4px solid;
+  }
+}

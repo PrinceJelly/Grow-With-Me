@@ -5,22 +5,5 @@
 }
 html {
   font-family: "Exo 2";
-  background-color: #f2f7f5;
-}
-
-.home {
-  position: relative;
-  height: 100%;
-  &__main-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 0px 0px 0px;
-  }
-  &__title {
-    bottom: 0;
-    right: 0;
-    font-size: 60px;
-    color: #faae2b;
-    position: absolute;
-  }
+  background-color: $primary-background;
 }

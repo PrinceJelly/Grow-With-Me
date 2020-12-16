@@ -38,7 +38,6 @@ function getById(req, res) {
 
 function del(req, res) {
   Goals.where("id", req.params.id)
-    .fetch({ withRelated: ["savings"] })
     .destroy()
     .then((deletedGoals) => {
       res.status(200).json({ deletedGoals });

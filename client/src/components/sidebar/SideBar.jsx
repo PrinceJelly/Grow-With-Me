@@ -4,7 +4,7 @@ import Goals from "../sidebar/menu-pages/Goals";
 import Stats from "../sidebar/menu-pages/Stats";
 import React, { useState } from "react";
 
-export default function SideBar({ setShowing }) {
+export default function SideBar({ setShowing, showing }) {
   const [newEntryPage, newEntryShowing] = useState(false);
   const [goalsPage, goalsPageShowing] = useState(false);
   const [statsPage, statsPageShowing] = useState(false);
@@ -28,33 +28,28 @@ export default function SideBar({ setShowing }) {
   };
 
   return (
-    <aside>
-      <Button handleClick={() => setShowing(false)}>Close Menu</Button>
-
-      <section className="page">
+    <aside className="menu__page">
+      <section className="menu__items">
         {newEntryPage ? <AddNewEntry newPageShowing={newEntryShowing} /> : ""}
         {goalsPage ? <Goals newPageShowing={goalsPageShowing} /> : ""}
         {statsPage ? <Stats newPageShowing={statsPageShowing} /> : ""}
       </section>
 
-      <ul className="navigation">
-        <li>
-          <Button id="newEntryShowing" handleClick={handleShowing}>
+      <ul className="menu__list">
+        <li className="menu__list_item">
+          <Button addClass="btn__next" id="newEntryShowing" handleClick={handleShowing}>
             Add a new entry
           </Button>
         </li>
-        <li>
-          <Button id="goalsPageShowing" handleClick={handleShowing}>
+        <li className="menu__list_item">
+          <Button addClass="btn__next" id="goalsPageShowing" handleClick={handleShowing}>
             My goals
           </Button>
         </li>
-        <li>
-          <Button id="statsPageShowing" handleClick={handleShowing}>
+        <li className="menu__list_item">
+          <Button addClass="btn__next" id="statsPageShowing" handleClick={handleShowing}>
             Stats
           </Button>
-        </li>
-        <li>
-          <Button>About</Button>
         </li>
       </ul>
     </aside>

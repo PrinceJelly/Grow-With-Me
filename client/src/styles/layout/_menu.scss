@@ -1,5 +1,49 @@
 .menu {
-  background-color: #83c5be;
-  width: 75%;
+  background-color: $primary-layout;
+  width: 60.5%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  align-content: stretch;
+  &__home-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    &__container {
+      position: absolute;
+      height: 100%;
+      z-index: 1;
+      @include flex;
+      background-color: white;
+    }
+  }
+
+  &__options {
+    z-index: 1;
+    position: relative;
+    top: 0;
+    left: 0px;
+    background-color: green;
+
+    &__btn-container {
+    }
+  }
+  &__page {
+  }
+
+  &__list {
+    @include flex(column, flex-end);
+    @extend .no-list-style;
+    width: 29vw;
+    height: 50vh;
+  }
+}
+
+.sideBar {
+  transform: translateX(-100%);
+  transition: 0.5s;
+  &--isactive {
+    transform: translateX(0);
+    border: red 3px solid;
+  }
 }

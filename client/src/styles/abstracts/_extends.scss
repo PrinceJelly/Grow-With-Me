@@ -1,0 +1,65 @@
+.polygon {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
+
+.add-shadow-btn {
+  filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
+}
+
+.add-shadow {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.no-border-outline {
+  border: none;
+  outline: none;
+}
+
+.no-list-style {
+  list-style: none;
+}
+
+.link-decoration {
+  text-decoration: none;
+  color: $primary-font;
+  font-size: font-size(2.5);
+  &:hover {
+    color: $secondary-font;
+  }
+
+  &:focus {
+    color: $secondary-font;
+    padding-bottom: spaceIncr(1.5);
+    border-bottom: $secondary-font 2px solid;
+  }
+}
+
+.btn-global {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  @extend .no-border-outline;
+  color: $secondary-font;
+  background-color: $button-global;
+  text-transform: capitalize;
+
+  &:hover {
+    color: $primary-font;
+    background-color: $button-global-focus-clicked;
+  }
+}
+
+.font {
+  font-family: "Exo 2";
+  font-size: font-size(1.7);
+  font-weight: 500;
+}
