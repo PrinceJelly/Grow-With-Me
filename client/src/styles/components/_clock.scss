@@ -1,0 +1,11 @@
+.clock {
+  @include flex(column);
+  margin-top: spaceIncr(5);
+  &__time {
+    @extend .font-regular-lite;
+    text-align: center;
+  }
+  &__date {
+    @extend .font-regular;
+  }
+}

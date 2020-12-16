@@ -26,11 +26,12 @@ export default function AddNewEntry() {
     }
   };
   return (
-    <section>
+    <section className="newPage newPage__addNewEntry">
       <h1>Hello</h1>
       <form>
         <label>What would you like to add?</label>
         <select onChange={handleSelected}>
+          <option value="Please select an option">Please select an option</option>
           <option value="Add a new Goal">Add a new goal</option>
           <option value="Add savings">Add savings</option>
           <option value="Add expense">Add expense</option>

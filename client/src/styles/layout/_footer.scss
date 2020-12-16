@@ -1,12 +1,15 @@
 .footer {
+  border-top: $button-global 7px solid;
   background-color: $secondary-background;
+
   position: fixed;
-  z-index: 2;
-  width: 100%;
-  height: 6%;
+
+  z-index: 4;
   bottom: 0;
   left: 0;
 
+  width: 100%;
+  height: 6%;
   &__icon-container {
     @include flex(row, flex-end);
 

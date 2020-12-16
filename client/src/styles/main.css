@@ -13,16 +13,18 @@
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.no-border-outline, .btn-global, .btn__CTA, .btn__start, .btn__start:focus, .btn__open, .btn__next {
+.no-border-outline, .btn-global, .btn__CTA, .btn__start, .btn__start:focus, .btn__open, .react-calendar__navigation__label, .react-calendar__tile {
   border: none;
   outline: none;
 }
 
-.no-list-style, .header__list, .menu__list {
+.no-list-style, .header__list, .side-bar__list {
   list-style: none;
 }
 
 .link-decoration, .header__item__link {
+  font-family: "Exo 2";
+  font-weight: 500;
   text-decoration: none;
   color: #2e2c2f;
   font-size: 20px;
@@ -44,18 +46,79 @@
   border-radius: 5px;
   color: #f2f7f5;
   background-color: #46634b;
-  text-transform: capitalize;
 }
 
 .btn-global:hover, .btn__CTA:hover {
   color: #2e2c2f;
-  background-color: #f3e8ee;
+  background-color: #f9f8f8;
 }
 
-.font, .btn__CTA, .btn__next {
+.font-regular, .clock__date {
   font-family: "Exo 2";
-  font-size: 13.6px;
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.font-regular-lite, .clock__time {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.font-sideways, .btn__open--txt, .menu__home-title {
+  font-family: "Exo 2";
+  font-weight: 200;
+  font-size: 28px;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-transform: uppercase;
+}
+
+.font-button, .btn__next {
+  font-family: "Exo 2";
+  font-size: 20px;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.font-button--secondary, .btn__start__txt, .btn__CTA {
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.font-calendar-regular, .react-calendar__navigation__label {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.font-calendar-regular--uppercase, .react-calendar__month-view__weekdays {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.calendar-background, .react-calendar__tile {
+  background-color: #ffffff;
+  border: #bdb2b2 1px dotted;
+}
+
+.calendar-background:focus, .react-calendar__tile:focus {
+  background-color: #dd7373;
 }
 
 @font-face {
@@ -299,11 +362,11 @@
 }
 
 .btn__start {
-  width: 150px;
-  height: 150px;
-  background-color: #46634b;
   -webkit-animation: spin 15s linear infinite;
           animation: spin 15s linear infinite;
+  width: 120px;
+  height: 120px;
+  background-color: #46634b;
 }
 
 @-webkit-keyframes spin {
@@ -354,12 +417,11 @@
 .btn__start__txt {
   position: absolute;
   z-index: 1;
-  font-size: larger;
+  top: 42%;
   color: #f2f7f5;
 }
 
 .btn__open {
-  background-color: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -375,27 +437,25 @@
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
   width: 2vw;
   height: 100%;
-}
-
-.btn__open_txt {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: mixed;
+  background-color: #2e2c2f;
+  color: #edf2f4;
 }
 
 .btn__next {
-  font-size: larger;
   width: 30vw;
   height: 5vh;
-  text-transform: uppercase;
   background-color: transparent;
+}
+
+.btn__next:hover {
+  background-color: #bdb2b2;
 }
 
 .progress-bar {
@@ -405,6 +465,29 @@
   width: 320px;
 }
 
+.clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-top: 40px;
+}
+
+.clock__time {
+  text-align: center;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -412,49 +495,76 @@
   padding: 0;
 }
 
-html {
+html body {
   font-family: "Exo 2";
-  background-color: #f3e8ee;
+  background-color: #ffffff;
 }
 
 .react-calendar {
-  height: 90vh;
+  position: relative;
+  z-index: 0;
+  max-height: 100vh;
   width: 70vw;
   padding: 0px 16px;
 }
 
-.react-calendar__navigation {
-  width: 100%;
-  height: 35px;
+.react-calendar--selectRange:active {
+  background-color: blue;
 }
 
-.react-calendar__navigation__label {
-  font-size: large;
-  font-family: "Exo 2";
-  border: none;
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__navigation {
+  width: 100%;
+  height: 3.5rem;
 }
 
 .react-calendar__navigation__arrow {
   width: 10%;
   border: none;
-  font-size: larger;
 }
 
 .react-calendar__tile {
-  width: 75px;
-  height: 100px;
-  font-size: larger;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 16px 12px;
+  width: 5vw;
+  height: 10vh;
+}
+
+.react-calendar__tile--now {
   border: none;
+  background-color: #dd7373;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+
+.react-calendar__month-view abbr {
+  text-decoration: none;
 }
 
 .header {
   background-color: #729b79;
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   top: 0;
   left: 0;
   height: 7%;
@@ -462,7 +572,6 @@ html {
 }
 
 .header__list {
-  margin: 12px 160px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,6 +589,7 @@ html {
       flex-wrap: nowrap;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin: 12px 160px 0;
 }
 
 .header__item {
@@ -505,9 +615,6 @@ html {
 }
 
 .menu {
-  background-color: #729b79;
-  width: 60.5%;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,24 +622,28 @@ html {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
+  position: relative;
+  background-color: #f9f8f8;
+  width: 30vw;
+  max-height: 88vh;
+  margin: 0 auto;
 }
 
 .menu__home-title {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: mixed;
+  color: #2e2c2f;
 }
 
 .menu__home-title__container {
-  position: absolute;
-  height: 100%;
-  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -548,18 +659,61 @@ html {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  background-color: white;
+  position: absolute;
+  z-index: 1;
+  width: 10%;
+  height: 100%;
+  background-color: #f9f8f8;
+  border-left: #ece9e9 10px solid;
 }
 
 .menu__options {
-  z-index: 1;
   position: relative;
   top: 0;
-  left: 0px;
-  background-color: green;
+  left: 0;
+  width: 100%;
+  background-color: #f9f8f8;
 }
 
-.menu__list {
+.sideBar {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+.sideBar--isactive {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.side-bar__content {
+  width: 100%;
+  height: 85%;
+}
+
+.side-bar__pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+}
+
+.side-bar__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -575,31 +729,21 @@ html {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  width: 29vw;
-  height: 50vh;
-}
-
-.sideBar {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.sideBar--isactive {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  border: red 3px solid;
+  position: absolute;
+  top: -15px;
+  width: 28vw;
+  height: 100%;
 }
 
 .footer {
+  border-top: #46634b 7px solid;
   background-color: #2e2c2f;
   position: fixed;
-  z-index: 2;
-  width: 100%;
-  height: 6%;
+  z-index: 4;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 6%;
 }
 
 .footer__icon-container {
@@ -625,9 +769,6 @@ html {
 }
 
 .hero {
-  width: 100vw;
-  height: 100%;
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -643,10 +784,11 @@ html {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  background-image: url(../../src/assets/img/calendula.png);
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  background: url(../../src/assets/img/calendula.png) no-repeat bottom;
   background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
 }
 
 .hero__container {
@@ -668,16 +810,15 @@ html {
   margin-bottom: 40px;
 }
 
-.hero__title {
-  font-size: 74px;
-  font-weight: 200;
-  margin: 24px;
-}
-
 .home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   position: relative;
-  height: 100%;
-  margin: 72px 0px;
+  height: 99vh;
 }
 
 .home__main-container {
@@ -687,17 +828,38 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 76px;
 }
 
 .main-menu__pet-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 28.9%;
+  width: 100%;
   height: 250px;
-  background-image: url(../../src/assets/img/petbg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-bottom: white 4px solid;
+  background: no-repeat center url(../../src/assets/img/petbg-5.jpg);
+  background-size: 100% auto;
+  border-bottom: white 5px solid;
+}
+
+.newPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  z-index: 2;
+  background-color: limegreen;
 }
 /*# sourceMappingURL=main.css.map */

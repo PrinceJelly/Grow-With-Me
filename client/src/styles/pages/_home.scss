@@ -1,9 +1,14 @@
 .home {
+  display: flex;
+  align-items: stretch;
+
   position: relative;
-  height: 100%;
-  margin: spaceIncr(9) spaceIncr(0);
+  height: 99vh;
+
   &__main-container {
     display: flex;
     justify-content: space-between;
+
+    margin-top: spaceIncr(9.5);
   }
 }

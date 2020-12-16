@@ -18,7 +18,7 @@ export default function Calender() {
         next2Label={null}
         prev2Label={null}
       />
-      <CalendarPopUp className="date-alert" selectedValue={selectedValue} />
+      <CalendarPopUp selectedValue={selectedValue} />
     </section>
   );
 }

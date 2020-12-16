@@ -1,14 +1,5 @@
 .polygon {
-  clip-path: polygon(
-    30% 0%,
-    70% 0%,
-    100% 30%,
-    100% 70%,
-    70% 100%,
-    30% 100%,
-    0% 70%,
-    0% 30%
-  );
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 .add-shadow-btn {
@@ -29,6 +20,8 @@
 }
 
 .link-decoration {
+  font-family: "Exo 2";
+  font-weight: 500;
   text-decoration: none;
   color: $primary-font;
   font-size: font-size(2.5);
@@ -44,13 +37,14 @@
 }
 
 .btn-global {
+  @extend .no-border-outline;
+
   width: 150px;
   height: 50px;
   border-radius: 5px;
-  @extend .no-border-outline;
+
   color: $secondary-font;
   background-color: $button-global;
-  text-transform: capitalize;
 
   &:hover {
     color: $primary-font;
@@ -58,8 +52,71 @@
   }
 }
 
-.font {
+.font-regular {
   font-family: "Exo 2";
-  font-size: font-size(1.7);
-  font-weight: 500;
+  font-weight: 300;
+  font-size: font-size(2.5);
+  text-transform: uppercase;
+}
+.font-regular-lite {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: font-size(5);
+  text-transform: uppercase;
+}
+
+.font-sideways {
+  font-family: "Exo 2";
+  font-weight: 200;
+  font-size: font-size(3.5);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-transform: uppercase;
+}
+
+.font-button {
+  font-family: "Exo 2";
+  font-size: font-size(2.5);
+  font-weight: 300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.font-button--secondary {
+  font-family: "Exo 2";
+  font-size: font-size(2);
+  font-weight: 300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.font-calendar-regular {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: font-size(3);
+  text-transform: capitalize;
+}
+
+.font-calendar-regular--uppercase {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: font-size(2.5);
+  text-transform: uppercase;
+}
+
+.calendar-background {
+  background-color: $primary-background;
+  border: $menu-navigation--hover 1px dotted;
+
+  &:disabled {
+  }
+  &:enabled {
+  }
+  &:focus {
+    background-color: $focus;
+  }
 }

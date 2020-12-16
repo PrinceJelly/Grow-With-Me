@@ -1,49 +1,69 @@
 .menu {
-  background-color: $primary-layout;
-  width: 60.5%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: stretch;
+  @include flex(row-reverse, flex-start, stretch);
   align-content: stretch;
+  position: relative;
+  background-color: $menu-primary-background;
+
+  width: 30vw;
+  max-height: 88vh;
+  margin: 0 auto;
+
   &__home-title {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
+    @extend .font-sideways;
+    color: $primary-font;
+
     &__container {
-      position: absolute;
-      height: 100%;
-      z-index: 1;
       @include flex;
-      background-color: white;
+      position: absolute;
+      z-index: 1;
+
+      width: 10%;
+      height: 100%;
+
+      background-color: $menu-primary-background;
+      border-left: $menu-border-panel--right 10px solid;
     }
   }
-
   &__options {
-    z-index: 1;
     position: relative;
     top: 0;
-    left: 0px;
-    background-color: green;
+    left: 0;
 
-    &__btn-container {
-    }
-  }
-  &__page {
-  }
+    width: 100%;
 
-  &__list {
-    @include flex(column, flex-end);
-    @extend .no-list-style;
-    width: 29vw;
-    height: 50vh;
+    background-color: $menu-primary-background;
   }
 }
 
 .sideBar {
   transform: translateX(-100%);
-  transition: 0.5s;
+  transition: 0.5s ease-out;
   &--isactive {
     transform: translateX(0);
-    border: red 3px solid;
+  }
+}
+
+.side-bar {
+  &__content {
+    width: 100%;
+    height: 85%;
+  }
+  &__pages {
+    @include flex(column, center, center);
+
+    position: relative;
+    z-index: 1;
+
+    padding: spaceIncr(3);
+  }
+  &__list {
+    @include flex(column, flex-end);
+    @extend .no-list-style;
+
+    position: absolute;
+    top: -15px;
+
+    width: 28vw;
+    height: 100%;
   }
 }

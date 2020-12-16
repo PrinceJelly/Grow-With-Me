@@ -11,18 +11,18 @@ export default function Menu() {
       </span>
       <MainMenu />
       <section className={`menu__options  sideBar ${showing && "sideBar--isactive"}`}>
-        <span className="menu__options_container">
+        <span className="menu__options--container">
           <SideBar setShowing={setShowing} showing={showing} />
         </span>
       </section>
-      <span className="menu__options_btn-container">
+      <span className="menu__options__btn--container">
         {showing ? (
           <Button addClass="btn__open" handleClick={() => setShowing(false)}>
-            <p className="btn__open_txt">Close Menu</p>
+            <p className="btn__open--txt">Close Menu</p>
           </Button>
         ) : (
           <Button addClass="btn__open" handleClick={() => setShowing(true)}>
-            <p className="btn__open_txt">Menu</p>
+            <p className="btn__open--txt">Menu</p>
           </Button>
         )}
       </span>
