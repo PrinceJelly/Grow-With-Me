@@ -1,7 +1,4 @@
-.polygon {
-  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-
+/**********************************ADD STYLES*************************************/
 .add-shadow-btn {
   filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
 }
@@ -9,7 +6,7 @@
 .add-shadow {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-
+/**********************************NO STYLES*************************************/
 .no-border-outline {
   border: none;
   outline: none;
@@ -19,12 +16,15 @@
   list-style: none;
 }
 
+/**********************************LINK STYLES*************************************/
+
 .link-decoration {
   font-family: "Exo 2";
   font-weight: 500;
   text-decoration: none;
   color: $primary-font;
   font-size: font-size(2.5);
+  text-transform: uppercase;
   &:hover {
     color: $secondary-font;
   }
@@ -36,11 +36,13 @@
   }
 }
 
+/**********************************BUTTON STYLES*************************************/
+
 .btn-global {
   @extend .no-border-outline;
 
   width: 150px;
-  height: 50px;
+  height: 45px;
   border-radius: 5px;
 
   color: $secondary-font;
@@ -51,6 +53,7 @@
     background-color: $button-global-focus-clicked;
   }
 }
+/***********************************FONT STYLES****************************************/
 
 .font-regular {
   font-family: "Exo 2";
@@ -98,7 +101,7 @@
   font-family: "Exo 2";
   font-weight: 300;
   font-size: font-size(3);
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .font-calendar-regular--uppercase {
@@ -107,16 +110,39 @@
   font-size: font-size(2.5);
   text-transform: uppercase;
 }
-
+/********************************** CALENDER STYLES *******************************/
 .calendar-background {
   background-color: $primary-background;
-  border: $menu-navigation--hover 1px dotted;
+}
 
+.calender-size--days {
+  height: 60vh;
+  padding: spaceIncr(2);
+}
+
+.calender-tile {
+  position: relative;
+  @include flex(row, flex-start, flex-start);
+  @extend .no-border-outline;
+  margin: spaceIncr(1) spaceIncr(0);
+  padding: spaceIncr(2) spaceIncr(1.5);
+  width: 5vw;
+  height: 8vh;
+
+  &:active {
+    cursor: pointer;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
   &:disabled {
+    cursor: not-allowed;
+    background-color: $test4;
   }
-  &:enabled {
-  }
-  &:focus {
-    background-color: $focus;
-  }
+}
+
+/**********************************MISC STYLES*************************************/
+.polygon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }

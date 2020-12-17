@@ -1,46 +1,23 @@
 import Button from "../resuable/Button";
 import Icon from "../resuable/React-Svg-Library";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
 
 export default function Header() {
-  const [showing, setShowing] = useState(false);
   return (
-    <nav className="header">
-      <ul className="header__list">
+    <nav className="home__header header">
+      <ul className="home__header__list header__list">
         <Link to="/">
           <li>
-            <span className="header__container__logo">
-              <Icon addClass="header__logo" name="gwmlogo_02-1.svg" />
+            <span className="home__header--container__logo header__container__logo">
+              <Icon addClass="home__header__logo header__logo" name="gwmlogo_02-1.svg" />
             </span>
           </li>
         </Link>
-        <span className="header__container__links">
-          <Link className="header__item__link" to="/">
-            <li className="header__item">Welcome</li>
-          </Link>
-          <Link className="header__item__link" to="#">
-            <li className="header__item">About</li>
-          </Link>
-          <Link className="header__item__link" to="#">
-            <li className="header__item">Contact</li>
-          </Link>
-        </span>
-        <span className="header__container__btn">
-          <li className="header__item__btn">
-            {showing ? (
-              <Link to="/">
-                <Button addClass="btn__CTA" handleClick={() => setShowing(false)}>
-                  Go Back to Home
-                </Button>
-              </Link>
-            ) : (
-              <Link to="/home">
-                <Button addClass="btn__CTA" handleClick={() => setShowing(true)}>
-                  Get started Now
-                </Button>
-              </Link>
-            )}
+        <span className="home__header--container__btn header__container__btn">
+          <li className="home__header--item__btn header__item__btn">
+            <Link to="/">
+              <Button addClass="btn__CTA">Go Back To Home</Button>
+            </Link>
           </li>
         </span>
       </ul>

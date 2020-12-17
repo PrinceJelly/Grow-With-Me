@@ -1,60 +1,57 @@
 .react-calendar {
+  @extend .calendar-background;
   position: relative;
   z-index: 0;
   max-height: 100vh;
   width: 70vw;
-  padding: spaceIncr(0) spaceIncr(2);
+  padding: spaceIncr(2) spaceIncr(2);
 
-  &--selectRange {
-    &:active {
-      background-color: blue;
-    }
-    .react-calendar__tile {
-      &--hover {
-        background-color: rgb(230, 230, 230);
-      }
-    }
-  }
   &__navigation {
     width: 100%;
     height: 3.5rem;
+    margin-bottom: spaceIncr(1.5);
     &__label {
+      background-color: $calendar-navigation;
       @extend .no-border-outline;
       @extend .font-calendar-regular;
+      color: $secondary-font;
     }
     &__arrow {
+      background-color: $calendar-aria-labels;
       width: 10%;
-
       border: none;
     }
     &:enabled {
     }
   }
-
-  &__tile {
-    position: relative;
-    @include flex(row, flex-start, flex-start);
-    @extend .no-border-outline;
-    @extend .calendar-background;
-    padding: spaceIncr(2) spaceIncr(1.5);
-    width: 5vw;
-    height: 10vh;
-
-    &--now {
-      border: none;
-      background-color: $focus;
-    }
-  }
-
   &__month-view {
+    padding: spaceIncr(1.5) spaceIncr(0);
+    border-top: $menu-navigation--hover 4px double;
+    border-bottom: $menu-navigation--hover 4px double;
+
     &__weekdays {
       @extend .font-calendar-regular--uppercase;
+
       &__weekday {
         padding: 0.5em;
       }
     }
+    &__days {
+      @extend .calender-size--days;
+    }
     abbr {
       text-decoration: none;
+    }
+  }
+  &__tile {
+    @extend .calender-tile;
+    &--now {
+    }
+    &--range {
+      background-color: rgb(230, 230, 230);
+    }
+    &--hover {
+      background-color: rgb(230, 230, 230);
     }
   }
 }

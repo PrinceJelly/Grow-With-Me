@@ -4,3 +4,9 @@
   left: 100px;
   width: 320px;
 }
+
+.ui.progress {
+  .bar {
+    background: $menu-tetiary-layout;
+  }
+}

@@ -1,7 +1,8 @@
 import Menu from "../sidebar/Menu";
 import Calendar from "./Calendar";
-import Header from "../home/Header";
-import Footer from "../home/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
+
 export default function Home() {
   return (
     <main className="home">

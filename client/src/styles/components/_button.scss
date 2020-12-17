@@ -39,13 +39,14 @@
 .btn__open {
   @include flex();
   @extend .no-border-outline;
+
   cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
 
-  width: 2vw;
+  width: 2.5vw;
   height: 100%;
 
   background-color: $menu-primary-layout;
