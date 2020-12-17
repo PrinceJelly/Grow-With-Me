@@ -1,57 +1,68 @@
 .react-calendar {
-  @extend .calendar-background;
+  @extend .calendar-main;
   position: relative;
   z-index: 0;
-  max-height: 100vh;
-  width: 70vw;
-  padding: spaceIncr(2) spaceIncr(2);
 
   &__navigation {
-    width: 100%;
-    height: 3.5rem;
-    margin-bottom: spaceIncr(1.5);
+    @extend .calendar-navigation;
     &__label {
-      background-color: $calendar-navigation;
-      @extend .no-border-outline;
-      @extend .font-calendar-regular;
-      color: $secondary-font;
+      @extend .calendar-navigation--label;
     }
     &__arrow {
-      background-color: $calendar-aria-labels;
-      width: 10%;
-      border: none;
-    }
-    &:enabled {
+      @extend .calendar-navigation--arrow;
     }
   }
+
+  &__century-view &__tile {
+    @include flex();
+    @extend .calendar-year-decade-century;
+  }
+  &__decade-view &__tile {
+    @include flex();
+    @extend .calendar-year-decade-century;
+  }
+  &__year-view &__tile {
+    @include flex();
+    @extend .calendar-year-decade-century;
+  }
+
   &__month-view {
     padding: spaceIncr(1.5) spaceIncr(0);
     border-top: $menu-navigation--hover 4px double;
     border-bottom: $menu-navigation--hover 4px double;
+    background-color: test1;
 
     &__weekdays {
       @extend .font-calendar-regular--uppercase;
 
       &__weekday {
-        padding: 0.5em;
+        @include flex(row, flex-start);
+        padding: spaceIncr(1) spaceIncr(2);
       }
     }
+
     &__days {
-      @extend .calender-size--days;
+      @extend .calendar-days;
     }
     abbr {
       text-decoration: none;
     }
   }
+
   &__tile {
-    @extend .calender-tile;
+    @extend .calendar-tile;
+    @extend .font-calendar-regular--int;
+    @include flex(row, flex-start, flex-start);
+    position: relative;
+
     &--now {
+      background-color: $button-focus-clicked-start;
     }
     &--range {
-      background-color: rgb(230, 230, 230);
+      background-color: $calendar-hover-lite;
     }
     &--hover {
-      background-color: rgb(230, 230, 230);
+      background-color: $calendar-hover-lite;
     }
   }
 }

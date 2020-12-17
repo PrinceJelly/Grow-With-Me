@@ -10,10 +10,8 @@ $primary-layout: #729b79;
 $secondary-layout: #475b63;
 $tertiary-layout: #bacdb0;
 
-$focus: #dd7373;
-
 $button-start: #46634b;
-$button-focus-clicked-start: #dd7373;
+$button-focus-clicked-start: #519e8a;
 
 $button-global: #46634b;
 $button-global-focus-clicked: #f9f8f8;
@@ -25,19 +23,21 @@ $tertiary-font: #ffffff;
 $menu-primary-background: #f9f8f8;
 $menu-primary-layout: #2e2c2f;
 $menu-secondary-layout: #729b79a6;
-$menu-tetiary-layout: #2f4858;
+$menu-tetiary-layout: #519e8a;
 $menu-navigation--hover: #bdb2b2;
 $menu-border-panel--right: #ece9e9;
 
-$border: #786868;
+$border: #78686888;
 
-$calender-primary: #f9f8f8;
+$calendar-primary: #f9f8f8;
 $calendar-navigation: #2e2c2f;
-$calendar-aria-labels: #e3dedf;
+$calendar-aria-labels: #f9f8f8;
+$calendar-hover: #bacdb0;
+$calendar-hover-lite: RGBA(239, 255, 176, 0.5);
 
-$test: #edf2f4;
-$test2: #272838;
+/******TESTING FOR COMPONENTS DEPENDENCIES | REACT LIBARIES ******/
+$test1: #edf2f4;
+$test2: #dd7373;
 $test3: #007090;
 $test4: #006989;
 $test5: #635457;
-$test6: #eaebed;

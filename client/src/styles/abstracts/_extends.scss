@@ -110,24 +110,32 @@
   font-size: font-size(2.5);
   text-transform: uppercase;
 }
-/********************************** CALENDER STYLES *******************************/
-.calendar-background {
+
+.font-calendar-regular--int {
+  font-family: "Exo 2";
+  font-weight: 300;
+  font-size: font-size(2.5);
+  text-transform: uppercase;
+}
+/********************************** CALENDAR STYLES *******************************/
+.calendar-main {
   background-color: $primary-background;
+  max-height: 100vh;
+  width: 70vw;
+  padding: spaceIncr(2) spaceIncr(2);
 }
 
-.calender-size--days {
+.calendar-days {
   height: 60vh;
   padding: spaceIncr(2);
 }
 
-.calender-tile {
-  position: relative;
-  @include flex(row, flex-start, flex-start);
+.calendar-tile {
   @extend .no-border-outline;
+  border-radius: 5px;
+  background-color: $primary-background;
   margin: spaceIncr(1) spaceIncr(0);
-  padding: spaceIncr(2) spaceIncr(1.5);
-  width: 5vw;
-  height: 8vh;
+  padding: spaceIncr(1.5) spaceIncr(1);
 
   &:active {
     cursor: pointer;
@@ -135,13 +143,48 @@
 
   &:hover {
     cursor: pointer;
+    background-color: $calendar-hover;
   }
   &:disabled {
     cursor: not-allowed;
-    background-color: $test4;
+    background-color: $calendar-aria-labels;
   }
 }
 
+.calendar-navigation {
+  width: 100%;
+  height: 3.5rem;
+  margin-bottom: spaceIncr(1.5);
+}
+
+.calendar-navigation--arrow {
+  @extend .no-border-outline;
+  border-radius: 5px;
+  background-color: $calendar-aria-labels;
+  width: 10%;
+  cursor: pointer;
+}
+
+.calendar-navigation--label {
+  @extend .no-border-outline;
+  @extend .font-calendar-regular;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $calendar-navigation;
+  color: $secondary-font;
+}
+
+.calendar-year-decade-century {
+  background-color: $calendar-primary;
+  height: 9vh;
+  &:hover {
+    background-color: $calendar-hover;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $calendar-aria-labels;
+  }
+}
 /**********************************MISC STYLES*************************************/
 .polygon {
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);

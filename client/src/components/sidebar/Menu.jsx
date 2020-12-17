@@ -12,7 +12,7 @@ export default function Menu() {
       <MainMenu />
       <section className={`menu__options  sideBar ${showing && "sideBar--isactive"}`}>
         <span className="menu__options--container">
-          <SideBar setShowing={setShowing} showing={showing} />
+          <SideBar />
         </span>
       </section>
       <span className="menu__options__btn--container">
@@ -22,7 +22,7 @@ export default function Menu() {
           </Button>
         ) : (
           <Button addClass="btn__open" handleClick={() => setShowing(true)}>
-            <p className="btn__open--txt">Menu</p>
+            <p className="btn__open_txt">Menu</p>
           </Button>
         )}
       </span>

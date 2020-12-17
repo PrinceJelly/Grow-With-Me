@@ -1,15 +1,23 @@
 import Calendar from "react-calendar";
 import React, { useState } from "react";
 import CalendarPopUp from "./CalendarPopUp";
+import Icon from "../resuable/React-Svg-Library";
 
 export default function Calender() {
+  const [showing, setShowing] = useState(false);
   const [selectedValue, setSelectedValue] = useState(new Date(), []);
+  const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
+  const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
 
-  console.log({ selectedValue });
+  const openModal = (event) => {
+    setShowing(true);
+  };
+
   return (
     /* around here there's a drop down menu for the date range component, it'll greatly change with scss*/
-    <section>
+    <section className="calendar">
       <Calendar
+        onClickDay={openModal}
         onChange={setSelectedValue}
         value={selectedValue}
         selectRange={true}
@@ -17,8 +25,12 @@ export default function Calender() {
         minDate={new Date(2019, 11, 31)}
         next2Label={null}
         prev2Label={null}
+        prevLabel={arrowLeft}
+        nextLabel={arrowRight}
       />
-      <CalendarPopUp selectedValue={selectedValue} />
+      <div className="modal modal--container">
+        {showing ? <CalendarPopUp selectedValue={selectedValue} setShowing={setShowing} /> : null}
+      </div>
     </section>
   );
 }
