@@ -1,7 +1,6 @@
 exports.up = (knex) => {
   return knex.schema.createTable("savings", (table) => {
     table.increments("id").primary();
-    table.string("label").notNullable().defaultTo("Savings");
     table
       .integer("goal_id")
       .unsigned()

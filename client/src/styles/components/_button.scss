@@ -66,3 +66,22 @@
     background-color: $menu-navigation--hover;
   }
 }
+
+.btn__modal {
+  @include flex(row, flex-start);
+  @extend .icon-global;
+  position: relative;
+  width: 11.5em;
+  height: 3em;
+  &--txt {
+    @include flex;
+    @extend .font-regular;
+    padding: 10px 10px;
+    border: transparent 10px solid;
+    color: transparent;
+    &:hover {
+      color: white;
+      @extend .close-animation;
+    }
+  }
+}

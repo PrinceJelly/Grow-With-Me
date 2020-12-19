@@ -25,9 +25,12 @@ $menu-primary-layout: #2e2c2f;
 $menu-secondary-layout: #729b79a6;
 $menu-tetiary-layout: #519e8a;
 $menu-navigation--hover: #bdb2b2;
+$menu-navigation--hover-lite: #bdb2b23b;
+$menu-navigation--hover-lighter: #f9f8f8d7;
 $menu-border-panel--right: #ece9e9;
 
-$border: #78686888;
+$border: #8d7c7c;
+$border-accent: #2e2c2f;
 
 $calendar-primary: #f9f8f8;
 $calendar-navigation: #2e2c2f;
@@ -35,6 +38,7 @@ $calendar-aria-labels: #f9f8f8;
 $calendar-hover: #bacdb0;
 $calendar-hover-lite: RGBA(239, 255, 176, 0.5);
 
+$form-selection: #729b79a6;
 /******TESTING FOR COMPONENTS DEPENDENCIES | REACT LIBARIES ******/
 $test1: #edf2f4;
 $test2: #dd7373;

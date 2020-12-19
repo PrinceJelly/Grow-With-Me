@@ -1,26 +1,44 @@
 import React, { useState } from "react";
 import Button from "../resuable/Button";
+import Icon from "../resuable/React-Svg-Library";
+import OnClickCalendar from "./onClickCalendar";
 export default function CalendarPopUp({ selectedValue, setShowing }) {
-  const [isClass, addClass] = useState(false);
+  const [isClass, addClass] = useState(true);
+
   const DATE_OPTIONS = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
   const DATE_OPTIONS_SHORT = { weekday: "short", year: "numeric", month: "short", day: "numeric" };
-
   return !selectedValue[0] ? (
     ""
   ) : (
-    <section className={`date-alert modal ${addClass && "modal--isactive"}`}>
-      <Button handleClick={() => setShowing(false)}>I AM BUTTON</Button>
-      {selectedValue[0].getDate() === selectedValue[1].getDate() ? (
-        <h2 className="date-alert__date">
-          {selectedValue[0].toLocaleDateString("en-US", DATE_OPTIONS)}
-        </h2>
-      ) : (
-        <h2 className="date-alert__date date-alert__date--selected-range">
-          {selectedValue[0].toLocaleDateString("en-US", DATE_OPTIONS_SHORT)} {" - "}
-          {selectedValue[1].toLocaleDateString("en-US", DATE_OPTIONS_SHORT)}
-        </h2>
-      )}
-    </section>
+    <main className="modal">
+      <section className={`date-alert ${isClass && "modal--active"}`}>
+        <div className="date-alert__btn--container">
+          <Button addClass="btn__modal" handleClick={() => setShowing(false)}>
+            <Icon addClass="minus-svg" name="cross.svg" />
+
+            <span className={`close-animation ${isClass && "close-animation--active"}`}>
+              <p className=" btn__modal--txt">Close</p>
+            </span>
+          </Button>
+        </div>
+        <div className="date-alert__date--container">
+          {selectedValue[0].getDate() === selectedValue[1].getDate() ? (
+            <h2 className="date-alert__date">
+              {selectedValue[0].toLocaleDateString("en-US", DATE_OPTIONS)}
+            </h2>
+          ) : (
+            <h2 className="date-alert__date date-alert__date--selected-range">
+              {selectedValue[0].toLocaleDateString("en-US", DATE_OPTIONS_SHORT)} {" - "}
+              {selectedValue[1].toLocaleDateString("en-US", DATE_OPTIONS_SHORT)}
+            </h2>
+          )}
+          {/* {expense &&
+            expense.map((lotsOfData) => {
+              return <OnClickCalendar key={lotsOfData.id} lotsOfData={lotsOfData} />;
+            })} */}
+        </div>
+      </section>
+    </main>
   );
 }
 /*******how to render the API with matching dates *******/

@@ -6,6 +6,10 @@
 .add-shadow {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+.add-border-radius {
+  border-radius: 5px;
+}
 /**********************************NO STYLES*************************************/
 .no-border-outline {
   border: none;
@@ -37,7 +41,11 @@
 }
 
 /**********************************BUTTON STYLES*************************************/
-
+.icon-global {
+  background-color: transparent;
+  cursor: pointer;
+  @extend .no-border-outline;
+}
 .btn-global {
   @extend .no-border-outline;
 
@@ -64,6 +72,12 @@
 .font-regular-lite {
   font-family: "Exo 2";
   font-weight: 300;
+  font-size: font-size(5);
+  text-transform: uppercase;
+}
+.font-regular-hvy {
+  font-family: "Exo 2";
+  font-weight: 500;
   font-size: font-size(5);
   text-transform: uppercase;
 }
@@ -116,6 +130,32 @@
   font-weight: 300;
   font-size: font-size(2.5);
   text-transform: uppercase;
+}
+
+.font-form {
+  font-family: "Exo 2";
+  font-size: font-size(2);
+  font-weight: 300;
+}
+.font-form-label {
+  font-family: "Exo 2";
+  font-size: font-size(2.5);
+  font-weight: 300;
+}
+
+.font-form-title {
+  font-family: "Exo 2";
+  font-style: italic;
+  font-weight: 300;
+  font-size: font-size(3);
+}
+
+.font-form-title--main {
+  font-family: "Exo 2";
+  font-style: italic;
+  font-weight: 300;
+  font-size: font-size(3.5);
+  color: $menu-navigation--hover;
 }
 /********************************** CALENDAR STYLES *******************************/
 .calendar-main {
@@ -185,6 +225,8 @@
     background-color: $calendar-aria-labels;
   }
 }
+/**********************************MODAL STYLES*************************************/
+/**********************************FORM STYLES*************************************/
 /**********************************MISC STYLES*************************************/
 .polygon {
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);

@@ -5,13 +5,17 @@
           filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
 }
 
-.add-shadow, .header {
+.add-shadow, .header, .main-menu__more--this {
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.add-border-radius, .progress-bar__label, .main-menu__more--container--mod, .main-menu__more--this, .expense__form--input {
+  border-radius: 5px;
+}
+
 /**********************************NO STYLES*************************************/
-.no-border-outline, .btn-global, .btn__CTA, .calendar-tile, .react-calendar__tile, .calendar-navigation--arrow, .react-calendar__navigation__arrow, .calendar-navigation--label, .react-calendar__navigation__label, .btn__start, .btn__start:focus, .btn__open {
+.no-border-outline, .icon-global, .btn__modal, .btn-global, .btn__CTA, .expense__form--input__button, .calendar-tile, .react-calendar__tile, .calendar-navigation--arrow, .react-calendar__navigation__arrow, .calendar-navigation--label, .react-calendar__navigation__label, .btn__start, .btn__start:focus, .btn__open, .expense__form--input {
   border: none;
   outline: none;
 }
@@ -41,7 +45,12 @@
 }
 
 /**********************************BUTTON STYLES*************************************/
-.btn-global, .btn__CTA {
+.icon-global, .btn__modal {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-global, .btn__CTA, .expense__form--input__button {
   width: 150px;
   height: 45px;
   border-radius: 5px;
@@ -49,22 +58,29 @@
   background-color: #46634b;
 }
 
-.btn-global:hover, .btn__CTA:hover {
+.btn-global:hover, .btn__CTA:hover, .expense__form--input__button:hover {
   color: #2e2c2f;
   background-color: #f9f8f8;
 }
 
 /***********************************FONT STYLES****************************************/
-.font-regular, .clock__date {
+.font-regular, .btn__modal--txt, .clock__date {
   font-family: "Exo 2";
   font-weight: 300;
   font-size: 20px;
   text-transform: uppercase;
 }
 
-.font-regular-lite, .clock__time {
+.font-regular-lite, .clock__time, .date-alert__date {
   font-family: "Exo 2";
   font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.font-regular-hvy {
+  font-family: "Exo 2";
+  font-weight: 500;
   font-size: 40px;
   text-transform: uppercase;
 }
@@ -80,7 +96,7 @@
   text-transform: uppercase;
 }
 
-.font-button, .btn__next {
+.font-button, .btn__next, .expense__form--input__button {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
@@ -119,6 +135,33 @@
   font-weight: 300;
   font-size: 20px;
   text-transform: uppercase;
+}
+
+.font-form, .ui.search.selection.dropdown {
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.font-form-label, .progress-bar__label, .main-menu__pet--name, .main-menu__more--of, .addNewEntry__form__label, .expense__form--label, .stats__text {
+  font-family: "Exo 2";
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.font-form-title, .main-menu__title, .main-menu__more--of-this, .expense__title, .stats__thx {
+  font-family: "Exo 2";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.font-form-title--main, .addNewEntry__title {
+  font-family: "Exo 2";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  color: #bdb2b2;
 }
 
 /********************************** CALENDAR STYLES *******************************/
@@ -189,10 +232,24 @@
   background-color: #f9f8f8;
 }
 
+/**********************************MODAL STYLES*************************************/
+/**********************************FORM STYLES*************************************/
 /**********************************MISC STYLES*************************************/
 .polygon, .btn__start {
   -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
           clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.close-animation, .btn__modal--txt:hover {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 1s ease-in 0.5s;
+  transition: all 1s ease-in 0.5s;
+}
+
+.close-animation--active {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 @font-face {
@@ -532,11 +589,65 @@
   background-color: #bdb2b2;
 }
 
+.btn__modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+  width: 11.5em;
+  height: 3em;
+}
+
+.btn__modal--txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 10px 10px;
+  border: transparent 10px solid;
+  color: transparent;
+}
+
+.btn__modal--txt:hover {
+  color: white;
+}
+
 .progress-bar {
   position: relative;
-  bottom: -200px;
+  bottom: -40px;
   left: 100px;
   width: 320px;
+}
+
+.progress-bar__label {
+  background-color: rgba(46, 44, 47, 0.589);
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #ece9e9;
 }
 
 .ui.progress .bar {
@@ -566,22 +677,84 @@
   text-align: center;
 }
 
-.date-alert {
-  background-color: #007090;
-  width: 100%;
-  height: 12vh;
-}
-
 .modal {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: 0.5s ease-out;
-  transition: 0.5s ease-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(46, 44, 47, 0.5);
 }
 
-.modal .modal--isactive {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+.date-alert {
+  border-top: #2e2c2f 10px solid;
+  background-color: #bdb2b2;
+  position: relative;
+  top: 50vh;
+  width: 100%;
+  height: 45vh;
+}
+
+.date-alert__btn--container {
+  padding: 16px;
+  position: relative;
+}
+
+.date-alert__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  color: #f2f7f5;
+}
+
+.date-alert__date--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 8px;
+}
+
+.minus-svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 8em;
+  height: 3em;
 }
 
 * {
@@ -594,6 +767,7 @@
 html body {
   font-family: "Exo 2";
   background-color: #ffffff;
+  width: 100vw;
 }
 
 .react-calendar {
@@ -819,7 +993,7 @@ html body {
   width: 10%;
   height: 100%;
   background-color: #f9f8f8;
-  border-right: #78686888 10px double;
+  border-right: #8d7c7c 10px double;
   border-left: #ece9e9 4px solid;
 }
 
@@ -892,7 +1066,7 @@ html body {
 }
 
 .footer {
-  border-top: #78686888 10px ridge;
+  border-top: #8d7c7c 10px ridge;
   background-color: #2e2c2f;
   position: fixed;
   z-index: 4;
@@ -973,6 +1147,7 @@ html body {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  width: 70vw;
   position: relative;
   height: 99vh;
 }
@@ -995,15 +1170,150 @@ html body {
   margin-left: 36px;
 }
 
-.main-menu__pet-container {
+.main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+}
+
+.main-menu__title {
+  position: relative;
+  left: 80px;
+}
+
+.main-menu__pet--name {
+  position: relative;
+  left: 80px;
+}
+
+.main-menu__pet {
+  position: relative;
+}
+
+.main-menu__pet--img {
+  position: absolute;
+  top: 120px;
+  right: 120px;
+}
+
+.main-menu__pet--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 250px;
   background: #729b79a6 no-repeat center url(../../src/assets/img/calendula.png);
   background-size: cover;
-  border-bottom: #78686888 10px double;
+  border-bottom: #8d7c7c 10px double;
+}
+
+.main-menu__more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+  top: 120px;
+  left: 0;
+}
+
+.main-menu__more--container--mod {
+  position: relative;
+  top: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  text-align: center;
+  width: 20vw;
+  height: 5vw;
+  background-color: #bdb2b23b;
+}
+
+.main-menu__more--of {
+  width: 85%;
+  font-size: 16px;
+}
+
+.main-menu__more--this {
+  border-top: #8d7c7c 4px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 16px;
+  background-color: #f9f8f8;
+  width: 20vw;
+  height: 200px;
+}
+
+.main-menu__more--this:hover {
+  background-color: #f9f8f8d7;
 }
 
 .newPage {
@@ -1023,7 +1333,136 @@ html body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   position: absolute;
-  z-index: 2;
-  background-color: limegreen;
+  z-index: 1;
+  top: 0;
+  background-color: #f9f8f8;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.ui.search.selection.dropdown {
+  padding: 8px;
+  min-width: 15rem;
+}
+
+.ui.search.selection.dropdown:hover {
+  border-color: #729b79a6;
+}
+
+.ui.search.selection.dropdown:focus {
+  border-color: #729b79a6;
+}
+
+.addNewEntry__form__selection {
+  padding: 0px;
+  margin: 16px;
+}
+
+.addNewEntry__form__selection--container {
+  margin-top: 40px;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.expense {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.expense__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.expense__form--input {
+  text-align: center;
+  width: 15vw;
+  height: 3vh;
+  border: rgba(34, 36, 38, 0.15) 1px solid;
+}
+
+.expense__form--input:focus .expense__form--input:active {
+  border: rgba(34, 36, 38, 0.15) 1px solid;
+}
+
+.expense__form--input__button {
+  margin: 40px;
+}
+
+.expense__form--input__button:hover {
+  background-color: #bacdb0;
+}
+
+.expense__form--label {
+  margin: 24px 0px;
+}
+
+.stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.stats__text {
+  width: 50%;
+  text-align: center;
+}
+
+.stats__thx {
+  width: 50%;
+  text-align: center;
+  text-transform: capitalize;
 }
 /*# sourceMappingURL=main.css.map */

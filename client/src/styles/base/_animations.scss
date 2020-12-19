@@ -8,3 +8,11 @@
     }
   }
 }
+
+.close-animation {
+  transform: translateX(100%);
+  transition: all 1s ease-in 0.5s;
+  &--active {
+    transform: translateX(-100%);
+  }
+}

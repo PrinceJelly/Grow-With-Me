@@ -1,8 +1,7 @@
 exports.up = (knex) => {
   return knex.schema.createTable("goals", (table) => {
     table.increments("id").primary();
-    table.string("label").notNullable().defaultTo("My Goal");
-    table.string("type").notNullable();
+    table.string("myGoal").notNullable();
     table.decimal("goal", 14, 2).notNullable().defaultTo(20);
   });
 };

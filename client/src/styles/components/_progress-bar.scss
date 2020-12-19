@@ -1,8 +1,18 @@
 .progress-bar {
   position: relative;
-  bottom: -200px;
+  bottom: spaceIncr(-5);
   left: 100px;
   width: 320px;
+
+  &__label {
+    background-color: rgba(46, 44, 47, 0.589);
+    @extend .font-form-label;
+    font-size: font-size(2);
+    text-transform: capitalize;
+    font-weight: normal;
+    color: $menu-border-panel--right;
+    @extend .add-border-radius;
+  }
 }
 
 .ui.progress {

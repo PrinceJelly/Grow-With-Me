@@ -1,6 +1,94 @@
 .newPage {
   @include flex(column);
   position: absolute;
-  z-index: 2;
-  background-color: limegreen;
+  z-index: 1;
+  top: 0;
+  background-color: $menu-primary-background;
+  width: 100%;
+  padding: spaceIncr(2.5) spaceIncr(0);
+}
+.ui.search.selection.dropdown {
+  @extend .font-form;
+  padding: spaceIncr(1);
+  min-width: 15rem;
+  &:hover {
+    border-color: $form-selection;
+  }
+  &:focus {
+    border-color: $form-selection;
+  }
+}
+.addNewEntry {
+  &__title {
+    @extend .font-form-title--main;
+    // position: absolute;
+    // top: spaceIncr(3.5);
+    // left: spaceIncr(9);
+  }
+  &__form {
+    &__label {
+      @extend .font-form-label;
+    }
+    &__selection {
+      padding: 0px;
+
+      margin: spaceIncr(2);
+
+      &--container {
+        margin-top: spaceIncr(5);
+        margin-bottom: spaceIncr(3);
+        @include flex(column);
+      }
+    }
+  }
+}
+
+.expense {
+  @include flex(column);
+  &__title {
+    @extend .font-form-title;
+  }
+  &__form {
+    @include flex(column);
+    &--input {
+      @extend .add-border-radius;
+      @extend .no-border-outline;
+      text-align: center;
+      width: 15vw;
+      height: 3vh;
+      border: rgba(34, 36, 38, 0.15) 1px solid;
+
+      &:focus &:active {
+        border: rgba(34, 36, 38, 0.15) 1px solid;
+      }
+      &__button {
+        margin: spaceIncr(5);
+        @extend .font-button;
+        @extend .btn-global;
+
+        &:hover {
+          background-color: $calendar-hover;
+        }
+      }
+    }
+    &--label {
+      margin: spaceIncr(3) spaceIncr(0);
+      @extend .font-form-label;
+    }
+  }
+}
+
+.stats {
+  @include flex(column);
+  &__text {
+    width: 50%;
+    text-align: center;
+    @extend .font-form-label;
+  }
+  &__thx {
+    width: 50%;
+    text-align: center;
+    @extend .font-form-title;
+    text-transform: capitalize;
+  }
 }

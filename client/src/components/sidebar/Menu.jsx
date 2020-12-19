@@ -22,7 +22,7 @@ export default function Menu() {
           </Button>
         ) : (
           <Button addClass="btn__open" handleClick={() => setShowing(true)}>
-            <p className="btn__open_txt">Menu</p>
+            <p className="btn__open--txt">Menu</p>
           </Button>
         )}
       </span>
