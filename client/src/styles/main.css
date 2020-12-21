@@ -5,12 +5,12 @@
           filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
 }
 
-.add-shadow, .header, .main-menu__more--this {
+.add-shadow, .card__list, .header, .main-menu__more--this {
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.add-border-radius, .progress-bar__label, .main-menu__more--container--mod, .main-menu__more--this, .expense__form--input {
+.add-border-radius, .progress-bar__label, .card__list, .main-menu__more--container--mod, .main-menu__more--this, .expense__form--input {
   border-radius: 5px;
 }
 
@@ -20,7 +20,7 @@
   outline: none;
 }
 
-.no-list-style, .header__list, .side-bar__list {
+.no-list-style, .card__list, .header__list, .side-bar__list {
   list-style: none;
 }
 
@@ -143,13 +143,13 @@
   font-weight: 300;
 }
 
-.font-form-label, .progress-bar__label, .main-menu__pet--name, .main-menu__more--of, .addNewEntry__form__label, .expense__form--label, .stats__text {
+.font-form-label, .progress-bar__label, .card__title__container, .card__type__container, .main-menu__pet--name, .main-menu__more--of, .addNewEntry__form__label, .expense__form--label, .stats__text {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
 }
 
-.font-form-title, .main-menu__title, .main-menu__more--of-this, .expense__title, .stats__thx {
+.font-form-title, .card__date, .main-menu__title, .main-menu__more--of-this, .expense__title, .stats__thx {
   font-family: "Exo 2";
   font-style: italic;
   font-weight: 300;
@@ -645,7 +645,7 @@
 .progress-bar__label {
   background-color: rgba(46, 44, 47, 0.589);
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: normal;
   color: #ece9e9;
 }
@@ -768,6 +768,85 @@ html body {
   font-family: "Exo 2";
   background-color: #ffffff;
   width: 100vw;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-top: 16px;
+  position: relative;
+  top: 0;
+  z-index: 5;
+  outline: none;
+}
+
+.card__list {
+  border-top: #8d7c7c 8px solid;
+  background-color: #f9f8f8;
+  padding: 20px;
+  margin: 16px;
+  width: 20vw;
+  height: 200px;
+}
+
+.card__list:hover {
+  background-color: #f9f8f8d7;
+}
+
+.card__date {
+  text-align: center;
+}
+
+.card__title__container {
+  padding: 0px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  border-bottom: #8d7c7c 5px solid;
+}
+
+.card__type__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 16px 8px;
 }
 
 .react-calendar {
@@ -989,7 +1068,7 @@ html body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   width: 10%;
   height: 100%;
   background-color: #f9f8f8;
@@ -1001,6 +1080,7 @@ html body {
   position: relative;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   background-color: #f9f8f8;
 }
@@ -1240,6 +1320,7 @@ html body {
 }
 
 .main-menu__more {
+  background-color: #f9f8f8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1257,6 +1338,7 @@ html body {
       flex-wrap: nowrap;
   position: relative;
   top: 120px;
+  z-index: 1;
   left: 0;
 }
 

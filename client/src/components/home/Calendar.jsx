@@ -1,12 +1,11 @@
 import Calendar from "react-calendar";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { DateTime } from "luxon";
 import CalendarPopUp from "./CalendarPopUp";
 import Icon from "../resuable/React-Svg-Library";
 
-import { getAllData } from "../utils/Axios";
-// import { getAllSavings } from "../utils/Axios";
-// import { getAllExpenses } from "../utils/Axios";
+import { getAllData, getAllSavings } from "../utils/Axios";
+
 export default function Calender() {
   let newDate = new Date();
 
@@ -26,21 +25,25 @@ export default function Calender() {
   useEffect(() => {
     getAllData().then((res) => {
       setGoals(res[0]);
-      setSave(res[1]);
-      setExpense(res[2]);
-      // const foo = res;
-      // console.log(foo);
-      // const bar = foo.map((item) => {
-      //   const d = item.date;
-      //   const that = DateTime.fromISO(d).toLocaleString();
-      //   console.log(that);
-      //   return setData(that);
     });
   }, []);
 
+  useEffect(() => {
+    getAllData().then((res) => {
+      setSave(res[1]);
+      setExpense(res[2]);
+    });
+  }, []);
+  // const foo = res;
+  // const bar = foo.map((item) => {
+  //   const d = item.date;
+  //   const that = DateTime.fromISO(d).toLocaleString();
+  //   return { ...item, date: that };
+  //   console.log(that);
+  //         setData(that);
   // const bar = foo.map((item) => {
   //       const d = item.date;
-  //       const that = DateTime.fromISO(d).toLocaleString();
+  //       const that
   //       return {..item, date: that};
   // })setData(that);
 
@@ -48,17 +51,11 @@ export default function Calender() {
     setShowing(true);
   };
   const onClickDay = () => {
-    //   getAllExpenses().then((res) => {
-    //     setExpense(res);
-    //   });
-    // };
-    // const onClickDaySave = () => {
-    //   getAllSavings().then((res) => {
-    //     setSave(res);
-    //   });
-    //need dates, filter through the timestamp in order to get on the correct dates DD/MM/YYYY
-    ///to match whats on the calendar
-    getAllData().then((res) => setData(res));
+    getAllData().then((res) => {
+      setGoals(res[0]);
+      setSave(res[1]);
+      setExpense(res[2]);
+    });
   };
 
   return (
@@ -66,8 +63,6 @@ export default function Calender() {
       <Calendar
         onClickDay={() => {
           onClickDay();
-          // onClickDayExpense();
-          // onClickDaySave();
           openModal();
         }}
         minDetail={"decade"}
@@ -88,9 +83,9 @@ export default function Calender() {
           <CalendarPopUp
             selectedValue={selectedValue}
             setShowing={setShowing}
-
-            // save={save}
-            // expense={expense}
+            save={save}
+            expense={expense}
+            goals={goals}
           />
         ) : null}
       </div>

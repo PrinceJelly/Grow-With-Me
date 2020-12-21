@@ -11,10 +11,10 @@ const savingsAPI = `${API}${savingsRoute}`;
 //        console.log(goalsAPI.data, savingsAPI.data, expensesAPI.data)
 /********************************** Goals Requests *********************************/
 export const getAllData = () => {
-  return Promise.all([axios.get(goalsAPI), axios.get(savingsAPI), axios.get(expensesAPI)])
+  return axios
+    .all([axios.get(goalsAPI), axios.get(savingsAPI), axios.get(expensesAPI)])
     .then((res) => {
       let get = res.map((r) => r.data);
-      console.log(get);
       return get;
     })
     .catch((error) => console.log(error));

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../resuable/Button";
 import Icon from "../resuable/React-Svg-Library";
 import OnClickCalendar from "./onClickCalendar";
-export default function CalendarPopUp({ selectedValue, setShowing }) {
+export default function CalendarPopUp({ selectedValue, setShowing, expense, save, goals }) {
   const [isClass, addClass] = useState(true);
 
   const DATE_OPTIONS = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
@@ -32,11 +32,8 @@ export default function CalendarPopUp({ selectedValue, setShowing }) {
               {selectedValue[1].toLocaleDateString("en-US", DATE_OPTIONS_SHORT)}
             </h2>
           )}
-          {/* {expense &&
-            expense.map((lotsOfData) => {
-              return <OnClickCalendar key={lotsOfData.id} lotsOfData={lotsOfData} />;
-            })} */}
         </div>
+        <OnClickCalendar expenseData={expense} saveData={save} goalsData={goals} />
       </section>
     </main>
   );

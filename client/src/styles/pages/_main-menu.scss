@@ -39,14 +39,17 @@
 
 .main-menu {
   &__more {
+    background-color: $menu-primary-background;
     @include flex(column);
     position: relative;
     top: spaceIncr(15);
+    z-index: 1;
     left: 0;
 
     &--container {
       &--mod {
         position: relative;
+
         top: 34px;
         @include flex();
         text-align: center;
