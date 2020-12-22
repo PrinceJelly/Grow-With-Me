@@ -13,9 +13,8 @@ export default function Calender() {
 
   const [showing, setShowing] = useState(false);
 
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([null]);
 
-  const [goals, setGoals] = useState(null);
   const [expense, setExpense] = useState(null);
   const [save, setSave] = useState(null);
 
@@ -24,39 +23,29 @@ export default function Calender() {
 
   useEffect(() => {
     getAllData().then((res) => {
-      setGoals(res[0]);
-    });
-  }, []);
-
-  useEffect(() => {
-    getAllData().then((res) => {
       setSave(res[1]);
       setExpense(res[2]);
     });
   }, []);
-  // const foo = res;
-  // const bar = foo.map((item) => {
-  //   const d = item.date;
-  //   const that = DateTime.fromISO(d).toLocaleString();
-  //   return { ...item, date: that };
-  //   console.log(that);
-  //         setData(that);
-  // const bar = foo.map((item) => {
-  //       const d = item.date;
-  //       const that
-  //       return {..item, date: that};
-  // })setData(that);
 
   const openModal = (event) => {
     setShowing(true);
   };
-  const onClickDay = () => {
-    getAllData().then((res) => {
-      setGoals(res[0]);
-      setSave(res[1]);
-      setExpense(res[2]);
+  const onClickDay = (date) => {
+    const getSaveDates = save.map((item) => {
+      const d = item.date;
+      const saveConverted = DateTime.fromISO(d).toLocaleString();
+      return { ...item, date: saveConverted };
     });
+    const getExpenseDate = expense.map((item) => {
+      const d = item.date;
+      const expenseConverted = DateTime.fromISO(d).toLocaleString();
+      return { ...item, date: expenseConverted };
+    });
+    setData([getExpenseDate, getSaveDates]);
+    //now I need to filter this as if it's a search result?
   };
+  console.log(data);
 
   return (
     <section className="calendar">
@@ -85,7 +74,6 @@ export default function Calender() {
             setShowing={setShowing}
             save={save}
             expense={expense}
-            goals={goals}
           />
         ) : null}
       </div>
