@@ -5,21 +5,17 @@ import CalendarPopUp from "./CalendarPopUp";
 import Icon from "../resuable/React-Svg-Library";
 
 import { getAllData, getAllSavings } from "../utils/Axios";
+import { formatDate } from "react-calendar/src/shared/dateFormatter";
 
 export default function Calender() {
-  let newDate = new Date();
-
-  const [selectedValue, setSelectedValue] = useState(newDate, []);
-
-  const [showing, setShowing] = useState(false);
-
-  const [data, setData] = useState([null]);
-
-  const [expense, setExpense] = useState(null);
-  const [save, setSave] = useState(null);
+  const [selectedValue, setSelectedValue] = useState(new Date(), []);
 
   const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
   const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
+
+  const [data, setData] = useState([null]);
+  const [expense, setExpense] = useState(null);
+  const [save, setSave] = useState(null);
 
   useEffect(() => {
     getAllData().then((res) => {
@@ -28,38 +24,28 @@ export default function Calender() {
     });
   }, []);
 
-  const openModal = (event) => {
-    setShowing(true);
+  const [showing, setShowing] = useState(false);
+  const [viewing, setViewing] = useState(false);
+  const onClickDay = (event) => {
+    setShowing(
+      save.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
+    );
+    setViewing(
+      expense.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
+    );
   };
-  const onClickDay = (date) => {
-    const getSaveDates = save.map((item) => {
-      const d = item.date;
-      const saveConverted = DateTime.fromISO(d).toLocaleString();
-      return { ...item, date: saveConverted };
-    });
-    const getExpenseDate = expense.map((item) => {
-      const d = item.date;
-      const expenseConverted = DateTime.fromISO(d).toLocaleString();
-      return { ...item, date: expenseConverted };
-    });
-    setData([getExpenseDate, getSaveDates]);
-    //now I need to filter this as if it's a search result?
-  };
-  console.log(data);
 
   return (
     <section className="calendar">
       <Calendar
-        onClickDay={() => {
-          onClickDay();
-          openModal();
+        onClickDay={(event) => {
+          onClickDay(event);
         }}
         minDetail={"decade"}
         calendarType={"US"}
-        locale={"en-US"}
+        locale={"en-CA"}
         onChange={setSelectedValue}
         value={selectedValue}
-        selectRange={true}
         maxDate={new Date()}
         minDate={new Date(2019, 11, 31)}
         next2Label={null}
@@ -68,14 +54,32 @@ export default function Calender() {
         nextLabel={arrowRight}
       />
       <div className="modal--container">
-        {showing ? (
-          <CalendarPopUp
-            selectedValue={selectedValue}
-            setShowing={setShowing}
-            save={save}
-            expense={expense}
-          />
-        ) : null}
+        {showing &&
+          showing.map((item) => {
+            return (
+              <ul key={item.id}>
+                <li>
+                  <p>{item.saved}</p>
+                  <p>{DateTime.fromISO(item.date).toLocaleString()}</p>
+                </li>
+              </ul>
+            );
+          })}
+        {viewing &&
+          viewing.map((item) => {
+            return (
+              <ul key={item.id}>
+                <li>
+                  <p>{item.type}</p>
+                  <p>{item.spent}</p>
+                  <p>{DateTime.fromISO(item.date).toLocaleString()}</p>
+                </li>
+              </ul>
+            );
+          })}
+        {/* {showing ? (
+          <CalendarPopUp selectedValue={selectedValue} setShowing={setShowing} save={save} />
+        ) : null} */}
       </div>
     </section>
   );
