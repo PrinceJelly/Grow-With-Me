@@ -1,9 +1,4 @@
 .card {
-  @include flex;
-  margin-top: spaceIncr(2);
-  position: relative;
-  top: 0;
-  z-index: 5;
   &__list {
     @extend .no-list-style;
     @extend .add-border-radius;
@@ -18,7 +13,6 @@
       background-color: $menu-navigation--hover-lighter;
     }
   }
-  outline: none;
 }
 
 .card {
@@ -42,3 +36,27 @@
     }
   }
 }
+
+// .card-section {
+//   @include flex;
+//   align-content: center;
+//   background-color: $test3;
+//   position: absolute;
+//   bottom: 5%;
+//   z-index: 4;
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+// .card__content {
+//   @include flex(column, flex-start, flex-start);
+// }
+
+// .card__container {
+//   @include flex(row);
+// }
+
+// .card__container--1 {
+//   @include flex(row);
+//   flex-wrap: wrap;
+// }

@@ -1,6 +1,10 @@
 import { DateTime } from "luxon";
-export default function SaveCard({ saveItem }) {
+
+export default function SaveCard({ saveItem, remainingAmount }) {
   const { saved, goals, date } = saveItem;
+
+const remainderAmount = goals.goal - saved; 
+
   return (
     <li className="card__item">
       <span className="card__date__container">
@@ -13,6 +17,7 @@ export default function SaveCard({ saveItem }) {
       <span className="card__type__container">
         <p className="card__type__container--type">My Goal: {goals.myGoal}</p>
         <p className="card__type__container--type">${goals.goal}.00</p>
+        <p className="card__type__container--type"> remainder :{remainderAmount}</p>
       </span>
     </li>
   );

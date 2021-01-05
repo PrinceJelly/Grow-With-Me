@@ -14,8 +14,7 @@ function get(req, res) {
 
 function post(req, res) {
   new Goals({
-    label: "My Goals:",
-    myGoal: req.body.myGoal || "",
+    myGoal: req.body.myGoal,
     goal: req.body.goal,
   })
     .save()

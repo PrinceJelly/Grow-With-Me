@@ -71,7 +71,7 @@
   text-transform: uppercase;
 }
 
-.font-regular-lite, .clock__time, .date-alert__date {
+.font-regular-lite, .clock__time {
   font-family: "Exo 2";
   font-weight: 300;
   font-size: 40px;
@@ -677,86 +677,6 @@
   text-align: center;
 }
 
-.modal {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  background-color: rgba(46, 44, 47, 0.5);
-}
-
-.date-alert {
-  border-top: #2e2c2f 10px solid;
-  background-color: #bdb2b2;
-  position: relative;
-  top: 50vh;
-  width: 100%;
-  height: 45vh;
-}
-
-.date-alert__btn--container {
-  padding: 16px;
-  position: relative;
-}
-
-.date-alert__date {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  color: #f2f7f5;
-}
-
-.date-alert__date--container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  padding: 8px;
-}
-
-.minus-svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: 8em;
-  height: 3em;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -768,29 +688,6 @@ html body {
   font-family: "Exo 2";
   background-color: #ffffff;
   width: 100vw;
-}
-
-.card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  margin-top: 16px;
-  position: relative;
-  top: 0;
-  z-index: 5;
-  outline: none;
 }
 
 .card__list {

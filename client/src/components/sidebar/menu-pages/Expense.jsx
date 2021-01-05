@@ -11,7 +11,7 @@ export default function Stats() {
         />
         <label className="expense__form--label">How much was it?</label>
 
-        <input className="expense__form--input" placeholder="Please enter the amount" />
+        <input className="expense__form--input" type="number" placeholder="Please enter the amount" />
         <input className="expense__form--input__button" type="button" value="submit" />
       </form>
     </section>

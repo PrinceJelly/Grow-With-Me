@@ -1,40 +1,58 @@
 import Calendar from "react-calendar";
 import React, { useState, useEffect } from "react";
-import { DateTime } from "luxon";
 import CalendarPopUp from "./CalendarPopUp";
 import Icon from "../resuable/React-Svg-Library";
-
-import { getAllData, getAllSavings } from "../utils/Axios";
-import { formatDate } from "react-calendar/src/shared/dateFormatter";
+import { getAllData } from "../utils/Axios";
 
 export default function Calender() {
   const [selectedValue, setSelectedValue] = useState(new Date(), []);
-
   const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
   const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
 
-  const [data, setData] = useState([null]);
-  const [expense, setExpense] = useState(null);
-  const [save, setSave] = useState(null);
-
+  const [expense, setExpense] = useState([null]);
+  const [save, setSave] = useState([null]);
+  const [goal, setGoal] = useState([null]);
   useEffect(() => {
     getAllData().then((res) => {
+      setGoal(res[0]);
       setSave(res[1]);
       setExpense(res[2]);
     });
   }, []);
 
-  const [showing, setShowing] = useState(false);
-  const [viewing, setViewing] = useState(false);
+
+  const [viewSavings, setViewSavings] = useState(false);
+  const [viewExpense, setViewExpense] = useState(false);
+  const [remainingAmount, setRemainingAmount] = useState(null);
+
+
+
   const onClickDay = (event) => {
-    setShowing(
+    setViewSavings(
       save.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
     );
-    setViewing(
+    if (save.length > 0 ) { 
+  const saveID = save.reduce((savedAmount, { goal_id, saved }) => {
+    (savedAmount[goal_id] = savedAmount[goal_id] || []).push(saved);
+    return savedAmount;
+  }, []);
+  console.log(saveID)
+  console.log(save);
+const savingsTotal = saveID.map((item => item.reduce((acc, val) => acc + val, 0)))
+const getGoal = save.map((item) =>  {return item.goals.goal})
+console.log(savingsTotal);
+///perhaps i need another if statement?
+// if goal_id  === goal_id then do this function? or ???
+const goalRemainder = getGoal[3] - savingsTotal[3];
+//this would hardcode it to be fixed on each array, although we want it to be dynamic
+//back to the drawing boaaard ;n;
+console.log(goalRemainder)
+}
+    setViewExpense(
       expense.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
     );
   };
-
+// console.log(save);
   return (
     <section className="calendar">
       <Calendar
@@ -53,34 +71,14 @@ export default function Calender() {
         prevLabel={arrowLeft}
         nextLabel={arrowRight}
       />
-      <div className="modal--container">
-        {showing &&
-          showing.map((item) => {
-            return (
-              <ul key={item.id}>
-                <li>
-                  <p>{item.saved}</p>
-                  <p>{DateTime.fromISO(item.date).toLocaleString()}</p>
-                </li>
-              </ul>
-            );
-          })}
-        {viewing &&
-          viewing.map((item) => {
-            return (
-              <ul key={item.id}>
-                <li>
-                  <p>{item.type}</p>
-                  <p>{item.spent}</p>
-                  <p>{DateTime.fromISO(item.date).toLocaleString()}</p>
-                </li>
-              </ul>
-            );
-          })}
-        {/* {showing ? (
-          <CalendarPopUp selectedValue={selectedValue} setShowing={setShowing} save={save} />
-        ) : null} */}
-      </div>
+      <section className="card-section">
+        <CalendarPopUp
+          selectedValue={selectedValue}
+          viewSavings={viewSavings}
+          viewExpense={viewExpense}
+          remainingAmount={remainingAmount}
+        />
+      </section>
     </section>
   );
 }

@@ -10,6 +10,7 @@ exports.up = (knex) => {
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
     table.decimal("saved", 14, 2).notNullable().defaultTo(0);
+    table.decimal("savingsUpdate", 14, 2).defaultTo(0);
     table.timestamp("date").defaultTo(knex.fn.now());
   });
 };

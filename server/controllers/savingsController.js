@@ -13,13 +13,13 @@ function get(req, res) {
 /*******************POST SAVINGS********************/
 
 function post(req, res) {
-  Goals.where({ id: req.body.goalId })
+  Goals.where({ id: req.body.goalId})
     .fetch()
     .then((goal) => {
       new Savings({
-        label: "Savings:",
         goal_id: req.body.goalId,
         saved: req.body.saved,
+        savingsUpdate: Goals.goal - req.body.saved,
       })
         .save()
         .then((newSavings) => {
@@ -45,7 +45,7 @@ function getById(req, res) {
 
 function patch(req, res) {
   if (req.body.goalsId) {
-    Goals.where("id", req.body.goalsId)
+    Goals.where({ id: req.body.goalId})
       .fetch()
       .then((goal) => console.log("Goal found"))
       .catch((goal) => {

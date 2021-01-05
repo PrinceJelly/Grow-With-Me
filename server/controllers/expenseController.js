@@ -13,7 +13,6 @@ function get(req, res) {
 
 function post(req, res) {
   new Expense({
-    label: "Expense:",
     type: req.body.type,
     spent: req.body.spent,
   })

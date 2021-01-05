@@ -7,4 +7,6 @@ exports.seed = (knex) =>
     .then(() => knex("goals").del())
     .then(() => knex("goals").insert(goalsData))
     .then(() => knex("savings").del())
-    .then(() => knex("savings").insert(savingsData));
+    .then(() => knex("savings").insert(savingsData))
+
+

@@ -3,6 +3,7 @@ exports.up = (knex) => {
     table.increments("id").primary();
     table.string("myGoal").notNullable();
     table.decimal("goal", 14, 2).notNullable().defaultTo(20);
+    table.decimal("goalRemainder", 14, 2).defaultTo(0);
   });
 };
 
