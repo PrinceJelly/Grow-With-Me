@@ -4,7 +4,7 @@ import Button from "../resuable/Button";
 import Icon from "../resuable/React-Svg-Library";
 import { useState, useEffect } from "react";
 
-export default function CalendarCard({ expenseData, saveData, remainingAmount }) {
+export default function CalendarCard({ expenseData, saveData}) {
 console.log(remainingAmount);
 
   return (
@@ -15,7 +15,7 @@ console.log(remainingAmount);
             return (
               <div className="card">
                 <ul className="card__list" key={saveItem.id}>
-                  <SaveCard key={saveItem.id} saveItem={saveItem} remainingAmount={remainingAmount} />
+                  <SaveCard key={saveItem.id} saveItem={saveItem} />
                 </ul>
               </div>
             );
