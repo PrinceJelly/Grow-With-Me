@@ -31,23 +31,24 @@ export default function Calender() {
     setViewSavings(
       save.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
     );
-    if (save.length > 0 ) { 
-  const saveID = save.reduce((savedAmount, { goal_id, saved }) => {
-    (savedAmount[goal_id] = savedAmount[goal_id] || []).push(saved);
-    return savedAmount;
-  }, []);
-  console.log(saveID)
-  console.log(save);
-const savingsTotal = saveID.map((item => item.reduce((acc, val) => acc + val, 0)))
-const getGoal = save.map((item) =>  {return item.goals.goal})
-console.log(savingsTotal);
-///perhaps i need another if statement?
-// if goal_id  === goal_id then do this function? or ???
-const goalRemainder = getGoal[3] - savingsTotal[3];
-//this would hardcode it to be fixed on each array, although we want it to be dynamic
-//back to the drawing boaaard ;n;
-console.log(goalRemainder)
-}
+    //UNESSCARY CODE I MADE IT TOO COMPLICATED GET RID OF THISSSSS!!!
+//     if (save.length > 0 ) { 
+//   const saveID = save.reduce((savedAmount, { goal_id, saved }) => {
+//     (savedAmount[goal_id] = savedAmount[goal_id] || []).push(saved);
+//     return savedAmount;
+//   }, []);
+//   console.log(saveID)
+//   console.log(save);
+// const savingsTotal = saveID.map((item => item.reduce((acc, val) => acc + val, 0)))
+// const getGoal = save.map((item) =>  {return item.goals.goal})
+// console.log(savingsTotal);
+// ///perhaps i need another if statement?
+// // if goal_id  === goal_id then do this function? or ???
+// const goalRemainder = getGoal[3] - savingsTotal[3];
+// //this would hardcode it to be fixed on each array, although we want it to be dynamic
+// //back to the drawing boaaard ;n;
+// console.log(goalRemainder)
+// }
     setViewExpense(
       expense.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
     );
