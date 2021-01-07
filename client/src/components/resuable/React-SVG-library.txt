@@ -8,7 +8,7 @@
 <Icon name="calendar.svg" />
 <Icon name="checkmark.svg" />
 <Icon name="cross.svg" />
-<Icon name="down-arrow.svg" />
+<Icon name="arrow-down.svg" />
 <Icon name="edit.svg" />
 <Icon name="heart.svg" />
 <Icon name="home.svg" />

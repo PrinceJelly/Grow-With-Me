@@ -5,22 +5,22 @@
           filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
 }
 
-.add-shadow, .card__list, .header, .main-menu__more--this {
+.add-shadow, .header {
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.add-border-radius, .progress-bar__label, .card__list, .main-menu__more--container--mod, .main-menu__more--this, .expense__form--input {
+.add-border-radius, .progress-bar__label, .expense__form--input {
   border-radius: 5px;
 }
 
 /**********************************NO STYLES*************************************/
-.no-border-outline, .icon-global, .btn__modal, .btn-global, .btn__CTA, .expense__form--input__button, .calendar-tile, .react-calendar__tile, .calendar-navigation--arrow, .react-calendar__navigation__arrow, .calendar-navigation--label, .react-calendar__navigation__label, .btn__start, .btn__start:focus, .btn__open, .expense__form--input {
+.no-border-outline, .icon-global, .icon, .btn-global, .btn__CTA, .btn__card, .expense__form--input__button, .calendar-tile, .react-calendar__tile, .calendar-navigation--arrow, .react-calendar__navigation__arrow, .calendar-navigation--label, .react-calendar__navigation__label, .btn__start, .btn__start:focus, .btn__open, .expense__form--input {
   border: none;
   outline: none;
 }
 
-.no-list-style, .card__list, .header__list, .side-bar__list {
+.no-list-style, .header__list, .side-bar__list {
   list-style: none;
 }
 
@@ -45,26 +45,26 @@
 }
 
 /**********************************BUTTON STYLES*************************************/
-.icon-global, .btn__modal {
+.icon-global, .icon {
   background-color: transparent;
   cursor: pointer;
 }
 
-.btn-global, .btn__CTA, .expense__form--input__button {
+.btn-global, .btn__CTA, .btn__card, .expense__form--input__button {
   width: 150px;
   height: 45px;
   border-radius: 5px;
-  color: #f2f7f5;
-  background-color: #46634b;
+  color: #2e2c2f;
+  background-color: #f9f8f8;
 }
 
-.btn-global:hover, .btn__CTA:hover, .expense__form--input__button:hover {
+.btn-global:hover, .btn__CTA:hover, .btn__card:hover, .expense__form--input__button:hover {
   color: #2e2c2f;
   background-color: #f9f8f8;
 }
 
 /***********************************FONT STYLES****************************************/
-.font-regular, .btn__modal--txt, .clock__date {
+.font-regular, .clock__date {
   font-family: "Exo 2";
   font-weight: 300;
   font-size: 20px;
@@ -96,7 +96,7 @@
   text-transform: uppercase;
 }
 
-.font-button, .btn__next, .expense__form--input__button {
+.font-button, .btn__next, .btn__card, .expense__form--input__button {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
@@ -143,13 +143,13 @@
   font-weight: 300;
 }
 
-.font-form-label, .progress-bar__label, .card__title__container, .card__type__container, .main-menu__pet--name, .main-menu__more--of, .addNewEntry__form__label, .expense__form--label, .stats__text {
+.font-form-label, .progress-bar__label, .addNewEntry__form__label, .expense__form--label, .stats__text {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
 }
 
-.font-form-title, .card__date, .main-menu__title, .main-menu__more--of-this, .expense__title, .stats__thx {
+.font-form-title, .expense__title, .stats__thx {
   font-family: "Exo 2";
   font-style: italic;
   font-weight: 300;
@@ -161,7 +161,7 @@
   font-style: italic;
   font-weight: 300;
   font-size: 28px;
-  color: #bdb2b2;
+  color: #b09e99;
 }
 
 /********************************** CALENDAR STYLES *******************************/
@@ -190,7 +190,7 @@
 
 .calendar-tile:hover, .react-calendar__tile:hover {
   cursor: pointer;
-  background-color: #bacdb0;
+  background-color: #fad4c0;
 }
 
 .calendar-tile:disabled, .react-calendar__tile:disabled {
@@ -224,7 +224,7 @@
 }
 
 .calendar-year-decade-century:hover, .react-calendar__century-view .react-calendar__tile:hover, .react-calendar__decade-view .react-calendar__tile:hover, .react-calendar__year-view .react-calendar__tile:hover {
-  background-color: #bacdb0;
+  background-color: #fad4c0;
 }
 
 .calendar-year-decade-century:disabled, .react-calendar__century-view .react-calendar__tile:disabled, .react-calendar__decade-view .react-calendar__tile:disabled, .react-calendar__year-view .react-calendar__tile:disabled {
@@ -240,7 +240,7 @@
           clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
-.close-animation, .btn__modal--txt:hover {
+.close-animation {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: all 1s ease-in 0.5s;
@@ -497,7 +497,7 @@
           animation: spin 15s linear infinite;
   width: 120px;
   height: 120px;
-  background-color: #46634b;
+  background-color: #729b79;
 }
 
 @-webkit-keyframes spin {
@@ -523,7 +523,7 @@
 }
 
 .btn__start:hover {
-  background-color: #519e8a;
+  background-color: #fad4c0;
 }
 
 .btn__start__container {
@@ -586,53 +586,7 @@
 }
 
 .btn__next:hover {
-  background-color: #bdb2b2;
-}
-
-.btn__modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  position: relative;
-  width: 11.5em;
-  height: 3em;
-}
-
-.btn__modal--txt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  padding: 10px 10px;
-  border: transparent 10px solid;
-  color: transparent;
-}
-
-.btn__modal--txt:hover {
-  color: white;
+  background-color: #b09e99;
 }
 
 .progress-bar {
@@ -690,25 +644,7 @@ html body {
   width: 100vw;
 }
 
-.card__list {
-  border-top: #8d7c7c 8px solid;
-  background-color: #f9f8f8;
-  padding: 20px;
-  margin: 16px;
-  width: 20vw;
-  height: 200px;
-}
-
-.card__list:hover {
-  background-color: #f9f8f8d7;
-}
-
-.card__date {
-  text-align: center;
-}
-
-.card__title__container {
-  padding: 0px 8px;
+.card__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -716,34 +652,14 @@ html body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  border-bottom: #8d7c7c 5px solid;
-}
-
-.card__type__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  padding: 16px 8px;
 }
 
 .react-calendar {
@@ -807,8 +723,8 @@ html body {
 
 .react-calendar__month-view {
   padding: 12px 0px;
-  border-top: #bdb2b2 4px double;
-  border-bottom: #bdb2b2 4px double;
+  border-top: #b09e99 4px double;
+  border-bottom: #b09e99 4px double;
   background-color: test1;
 }
 
@@ -855,7 +771,7 @@ html body {
 }
 
 .react-calendar__tile--now {
-  background-color: #519e8a;
+  background-color: #fad4c0;
 }
 
 .react-calendar__tile--range {
@@ -867,7 +783,7 @@ html body {
 }
 
 .header {
-  background-color: #729b79;
+  background-color: #fad4c0;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -940,7 +856,7 @@ html body {
   position: relative;
   background-color: #f9f8f8;
   width: 30vw;
-  max-height: 88vh;
+  max-height: auto;
   margin: 0 auto;
 }
 
@@ -1140,159 +1056,16 @@ html body {
 }
 
 .home__header {
-  border-bottom: #bacdb0 7px solid;
+  border-bottom: #fee9e1 7px solid;
 }
 
 .home__header__logo {
   margin-left: 36px;
 }
 
-.main-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  width: 100%;
+.calendar {
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.main-menu__title {
-  position: relative;
-  left: 80px;
-}
-
-.main-menu__pet--name {
-  position: relative;
-  left: 80px;
-}
-
-.main-menu__pet {
-  position: relative;
-}
-
-.main-menu__pet--img {
-  position: absolute;
-  top: 120px;
-  right: 120px;
-}
-
-.main-menu__pet--container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 250px;
-  background: #729b79a6 no-repeat center url(../../src/assets/img/calendula.png);
-  background-size: cover;
-  border-bottom: #8d7c7c 10px double;
-}
-
-.main-menu__more {
-  background-color: #f9f8f8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  position: relative;
-  top: 120px;
-  z-index: 1;
-  left: 0;
-}
-
-.main-menu__more--container--mod {
-  position: relative;
-  top: 34px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  text-align: center;
-  width: 20vw;
-  height: 5vw;
-  background-color: #bdb2b23b;
-}
-
-.main-menu__more--of {
-  width: 85%;
-  font-size: 16px;
-}
-
-.main-menu__more--this {
-  border-top: #8d7c7c 4px solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  margin: 16px;
-  background-color: #f9f8f8;
-  width: 20vw;
-  height: 200px;
-}
-
-.main-menu__more--this:hover {
-  background-color: #f9f8f8d7;
+  overflow-y: scroll;
 }
 
 .newPage {
@@ -1409,7 +1182,7 @@ html body {
 }
 
 .expense__form--input__button:hover {
-  background-color: #bacdb0;
+  background-color: #fad4c0;
 }
 
 .expense__form--label {

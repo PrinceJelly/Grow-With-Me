@@ -11,21 +11,16 @@ export default function Calender() {
 
   const [expense, setExpense] = useState([null]);
   const [save, setSave] = useState([null]);
-  const [goal, setGoal] = useState([null]);
+
   useEffect(() => {
     getAllData().then((res) => {
-      setGoal(res[0]);
       setSave(res[1]);
       setExpense(res[2]);
     });
   }, []);
 
-
   const [viewSavings, setViewSavings] = useState(false);
   const [viewExpense, setViewExpense] = useState(false);
-
-
-
 
   const onClickDay = (event) => {
     setViewSavings(

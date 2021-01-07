@@ -1,62 +1,11 @@
 .card {
   &__list {
-    @extend .no-list-style;
-    @extend .add-border-radius;
-    @extend .add-shadow;
-    border-top: $border 8px solid;
-    background-color: $menu-primary-background;
-    padding: spaceIncr(2.5);
-    margin: spaceIncr(2);
-    width: 20vw;
-    height: 200px;
-    &:hover {
-      background-color: $menu-navigation--hover-lighter;
-    }
   }
 }
 
 .card {
-  &__date {
-    @extend .font-form-title;
-    text-align: center;
-  }
-  &__title {
-    &__container {
-      @extend .font-form-label;
-      padding: spaceIncr(0) spaceIncr(1);
-      @include flex(row, space-between, flex-start);
-      border-bottom: $border 5px solid;
-    }
-  }
-  &__type {
-    &__container {
-      @include flex(row, space-between, flex-start);
-      padding: spaceIncr(2) spaceIncr(1);
-      @extend .font-form-label;
-    }
-  }
 }
 
-// .card-section {
-//   @include flex;
-//   align-content: center;
-//   background-color: $test3;
-//   position: absolute;
-//   bottom: 5%;
-//   z-index: 4;
-//   width: 100%;
-//   margin: 0 auto;
-// }
-
-// .card__content {
-//   @include flex(column, flex-start, flex-start);
-// }
-
-// .card__container {
-//   @include flex(row);
-// }
-
-// .card__container--1 {
-//   @include flex(row);
-//   flex-wrap: wrap;
-// }
+.card__content {
+  @include flex;
+}

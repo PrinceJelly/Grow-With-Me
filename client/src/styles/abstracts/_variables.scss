@@ -6,14 +6,14 @@ $primary-background: #ffffff;
 $secondary-background: #2e2c2f;
 $secondary-background-opacity: rgba(46, 44, 47, 0.5);
 
-$primary-layout: #729b79;
+$primary-layout: #fad4c0;
 $secondary-layout: #475b63;
-$tertiary-layout: #bacdb0;
+$tertiary-layout: #fee9e1;
 
-$button-start: #46634b;
-$button-focus-clicked-start: #519e8a;
+$button-start: #729b79;
+$button-focus-clicked-start: #fad4c0;
 
-$button-global: #46634b;
+$button-global: #f9f8f8;
 $button-global-focus-clicked: #f9f8f8;
 
 $primary-font: #2e2c2f;
@@ -24,7 +24,7 @@ $menu-primary-background: #f9f8f8;
 $menu-primary-layout: #2e2c2f;
 $menu-secondary-layout: #729b79a6;
 $menu-tetiary-layout: #519e8a;
-$menu-navigation--hover: #bdb2b2;
+$menu-navigation--hover: #b09e99;
 $menu-navigation--hover-lite: #bdb2b23b;
 $menu-navigation--hover-lighter: #f9f8f8d7;
 $menu-border-panel--right: #ece9e9;
@@ -35,7 +35,8 @@ $border-accent: #2e2c2f;
 $calendar-primary: #f9f8f8;
 $calendar-navigation: #2e2c2f;
 $calendar-aria-labels: #f9f8f8;
-$calendar-hover: #bacdb0;
+$calendar-active-now: #fad4c0;
+$calendar-hover: #fad4c0;
 $calendar-hover-lite: RGBA(239, 255, 176, 0.5);
 
 $form-selection: #729b79a6;
@@ -45,3 +46,8 @@ $test2: #dd7373;
 $test3: #007090;
 $test4: #006989;
 $test5: #635457;
+
+$test6: #729b79;
+$test7: #bacdb0;
+$test8: #6fd08c;
+$test9: #b0f2b4;

@@ -56,7 +56,7 @@
     position: relative;
 
     &--now {
-      background-color: $button-focus-clicked-start;
+      background-color: $calendar-active-now;
     }
     &--range {
       background-color: $calendar-hover-lite;

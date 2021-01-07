@@ -1,20 +1,11 @@
-export default function InputField({
-  name,
-  addClass,
-  placeholder,
-  removeError,
-  type,
-  value,
-  errorClass,
-}) {
+export default function Form({ addClass, children, handleSubmit, id }) {
   return (
-    <input
-      name={name}
-      className={`form__input ${addClass}`}
-      placeholder={placeholder}
-      defaultValue={value}
-      type={type ? type : "text"}
-      onChange={removeError && ((e) => removeError(e, errorClass))}
-    />
+    <form
+      id={id ? id : ""}
+      className={`form ${addClass ? addClass : ""}`}
+      onSubmit={(e) => handleSubmit(e)}
+    >
+      {children}
+    </form>
   );
 }
