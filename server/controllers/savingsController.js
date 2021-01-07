@@ -15,7 +15,7 @@ function get(req, res) {
 async function post(req, res) {
   //get goal
   const currentGoal = await Goals.where({ id: req.body.goalId })
-    .fetch({ columns: ["goal", "goalRemainder"] })
+    .fetch({ columns: ["goal", "goalRemainder", "savedToDate"] })
     .then((goal) => {
       return goal.attributes;
     });
@@ -28,7 +28,10 @@ async function post(req, res) {
 
   const goal = await new Goals({ id: req.body.goalId })
     .save(
-      { goalRemainder: currentGoal.goalRemainder - req.body.saved },
+      {
+        goalRemainder: currentGoal.goalRemainder - req.body.saved,
+        savedToDate: currentGoal.savedToDate + req.body.saved,
+      },
       {
         patch: true,
       }
