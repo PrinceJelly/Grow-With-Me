@@ -77,18 +77,3 @@
     }
   }
 }
-
-.stats {
-  @include flex(column);
-  &__text {
-    width: 50%;
-    text-align: center;
-    @extend .font-form-label;
-  }
-  &__thx {
-    width: 50%;
-    text-align: center;
-    @extend .font-form-title;
-    text-transform: capitalize;
-  }
-}

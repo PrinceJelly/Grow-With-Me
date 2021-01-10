@@ -8,9 +8,10 @@ export default function Calender() {
   const [selectedValue, setSelectedValue] = useState(new Date(), []);
   const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
   const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
+  const DATE_OPTIONS = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
 
-  const [expense, setExpense] = useState([null]);
-  const [save, setSave] = useState([null]);
+  const [expense, setExpense] = useState(null);
+  const [save, setSave] = useState(null);
 
   useEffect(() => {
     getAllData().then((res) => {
@@ -26,6 +27,7 @@ export default function Calender() {
     setViewSavings(
       save.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
     );
+
     setViewExpense(
       expense.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
     );
@@ -33,28 +35,40 @@ export default function Calender() {
 
   return (
     <section className="calendar">
-      <Calendar
-        onClickDay={(event) => {
-          onClickDay(event);
-        }}
-        minDetail={"decade"}
-        calendarType={"US"}
-        locale={"en-CA"}
-        onChange={setSelectedValue}
-        value={selectedValue}
-        maxDate={new Date()}
-        minDate={new Date(2019, 11, 31)}
-        next2Label={null}
-        prev2Label={null}
-        prevLabel={arrowLeft}
-        nextLabel={arrowRight}
-      />
-      <section className="card-section">
-        <CalendarPopUp
-          selectedValue={selectedValue}
-          viewSavings={viewSavings}
-          viewExpense={viewExpense}
+      <div className="calendar__container">
+        <Calendar
+          onClickDay={(event) => {
+            onClickDay(event);
+          }}
+          minDetail={"decade"}
+          calendarType={"US"}
+          locale={"en-CA"}
+          onChange={setSelectedValue}
+          value={selectedValue}
+          maxDate={new Date()}
+          minDate={new Date(2019, 11, 31)}
+          next2Label={null}
+          prev2Label={null}
+          prevLabel={arrowLeft}
+          nextLabel={arrowRight}
         />
+      </div>
+      <section className="card-section">
+        <span className="card-section__content__title">
+          <p>{selectedValue.toLocaleDateString("en-CA", DATE_OPTIONS)}</p>
+        </span>
+        {
+          (save,
+          expense === null ? (
+            "Nothing"
+          ) : (
+            <CalendarPopUp
+              selectedValue={selectedValue}
+              viewSavings={viewSavings}
+              viewExpense={viewExpense}
+            />
+          ))
+        }
       </section>
     </section>
   );

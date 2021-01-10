@@ -1,6 +1,6 @@
 /**********************************ADD STYLES*************************************/
 .add-shadow-btn {
-  filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
+  filter: drop-shadow(20px 20px 0px rgba(162, 227, 196, 0.5));
 }
 
 .add-shadow {
@@ -26,17 +26,22 @@
   font-family: "Exo 2";
   font-weight: 500;
   text-decoration: none;
-  color: $primary-font;
+  color: $secondary-font;
   font-size: font-size(2.5);
   text-transform: uppercase;
+  padding: spaceIncr(2.7) 0;
+  border-bottom: transparent 4px solid;
+  margin: 0 spaceIncr(1);
   &:hover {
     color: $secondary-font;
+    padding: spaceIncr(2.7) 0;
+    border-bottom: $secondary-font 4px solid;
   }
 
   &:focus {
     color: $secondary-font;
-    padding-bottom: spaceIncr(1.5);
-    border-bottom: $secondary-font 2px solid;
+    padding: spaceIncr(2.7) 0;
+    border-bottom: $secondary-font 4px solid;
   }
 }
 
@@ -90,8 +95,16 @@
   text-orientation: mixed;
   text-transform: uppercase;
 }
-
 .font-button {
+  font-family: "Exo 2";
+  font-size: font-size(2);
+  font-weight: 300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.font-button--big {
   font-family: "Exo 2";
   font-size: font-size(2.5);
   font-weight: 300;
@@ -103,8 +116,8 @@
 
 .font-button--secondary {
   font-family: "Exo 2";
-  font-size: font-size(2);
-  font-weight: 300;
+  font-size: font-size(2.5);
+  font-weight: 500;
   border: none;
   outline: none;
   cursor: pointer;

@@ -1,8 +1,8 @@
 /******TESTING FOR COMPONENTS DEPENDENCIES | REACT LIBARIES ******/
 /**********************************ADD STYLES*************************************/
 .add-shadow-btn, .btn__start__container {
-  -webkit-filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
-          filter: drop-shadow(20px 20px 0px rgba(221, 115, 115, 0.25));
+  -webkit-filter: drop-shadow(20px 20px 0px rgba(162, 227, 196, 0.5));
+          filter: drop-shadow(20px 20px 0px rgba(162, 227, 196, 0.5));
 }
 
 .add-shadow, .header {
@@ -29,19 +29,24 @@
   font-family: "Exo 2";
   font-weight: 500;
   text-decoration: none;
-  color: #2e2c2f;
+  color: #f2f7f5;
   font-size: 20px;
   text-transform: uppercase;
+  padding: 21.6px 0;
+  border-bottom: transparent 4px solid;
+  margin: 0 8px;
 }
 
 .link-decoration:hover, .header__item__link:hover {
   color: #f2f7f5;
+  padding: 21.6px 0;
+  border-bottom: #f2f7f5 4px solid;
 }
 
 .link-decoration:focus, .header__item__link:focus {
   color: #f2f7f5;
-  padding-bottom: 12px;
-  border-bottom: #f2f7f5 2px solid;
+  padding: 21.6px 0;
+  border-bottom: #f2f7f5 4px solid;
 }
 
 /**********************************BUTTON STYLES*************************************/
@@ -96,7 +101,17 @@
   text-transform: uppercase;
 }
 
-.font-button, .btn__next, .btn__card, .expense__form--input__button {
+.font-button, .btn__CTA, .expense__form--input__button {
+  font-family: "Exo 2";
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.font-button--big, .btn__next, .btn__card {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
@@ -106,10 +121,10 @@
   text-transform: uppercase;
 }
 
-.font-button--secondary, .btn__start__txt, .btn__CTA {
+.font-button--secondary, .btn__start__txt {
   font-family: "Exo 2";
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 500;
   border: none;
   outline: none;
   cursor: pointer;
@@ -143,13 +158,13 @@
   font-weight: 300;
 }
 
-.font-form-label, .progress-bar__label, .addNewEntry__form__label, .expense__form--label, .stats__text {
+.font-form-label, .progress-bar__label, .addNewEntry__form__label, .expense__form--label {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
 }
 
-.font-form-title, .expense__title, .stats__thx {
+.font-form-title, .expense__title {
   font-family: "Exo 2";
   font-style: italic;
   font-weight: 300;
@@ -161,7 +176,7 @@
   font-style: italic;
   font-weight: 300;
   font-size: 28px;
-  color: #b09e99;
+  color: RGBA(162, 227, 196, 0.5);
 }
 
 /********************************** CALENDAR STYLES *******************************/
@@ -190,12 +205,12 @@
 
 .calendar-tile:hover, .react-calendar__tile:hover {
   cursor: pointer;
-  background-color: #fad4c0;
+  background-color: #ade6ca;
 }
 
 .calendar-tile:disabled, .react-calendar__tile:disabled {
   cursor: not-allowed;
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
 }
 
 .calendar-navigation, .react-calendar__navigation {
@@ -206,7 +221,7 @@
 
 .calendar-navigation--arrow, .react-calendar__navigation__arrow {
   border-radius: 5px;
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
   width: 10%;
   cursor: pointer;
 }
@@ -214,22 +229,22 @@
 .calendar-navigation--label, .react-calendar__navigation__label {
   border-radius: 5px;
   cursor: pointer;
-  background-color: #2e2c2f;
+  background-color: #1f2321;
   color: #f2f7f5;
 }
 
 .calendar-year-decade-century, .react-calendar__century-view .react-calendar__tile, .react-calendar__decade-view .react-calendar__tile, .react-calendar__year-view .react-calendar__tile {
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
   height: 9vh;
 }
 
 .calendar-year-decade-century:hover, .react-calendar__century-view .react-calendar__tile:hover, .react-calendar__decade-view .react-calendar__tile:hover, .react-calendar__year-view .react-calendar__tile:hover {
-  background-color: #fad4c0;
+  background-color: #ade6ca;
 }
 
 .calendar-year-decade-century:disabled, .react-calendar__century-view .react-calendar__tile:disabled, .react-calendar__decade-view .react-calendar__tile:disabled, .react-calendar__year-view .react-calendar__tile:disabled {
   cursor: not-allowed;
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
 }
 
 /**********************************MODAL STYLES*************************************/
@@ -497,7 +512,7 @@
           animation: spin 15s linear infinite;
   width: 120px;
   height: 120px;
-  background-color: #729b79;
+  background-color: #7e8d85;
 }
 
 @-webkit-keyframes spin {
@@ -523,7 +538,7 @@
 }
 
 .btn__start:hover {
-  background-color: #fad4c0;
+  background-color: #6d7b74;
 }
 
 .btn__start__container {
@@ -548,7 +563,7 @@
 .btn__start__txt {
   position: absolute;
   z-index: 1;
-  top: 42%;
+  top: 45px;
   color: #f2f7f5;
 }
 
@@ -575,7 +590,7 @@
   z-index: 1;
   width: 2.5vw;
   height: 100%;
-  background-color: #2e2c2f;
+  background-color: #1f2321;
   color: #edf2f4;
 }
 
@@ -586,7 +601,7 @@
 }
 
 .btn__next:hover {
-  background-color: #b09e99;
+  background-color: RGBA(162, 227, 196, 0.5);
 }
 
 .progress-bar {
@@ -601,7 +616,7 @@
   font-size: 16px;
   text-transform: capitalize;
   font-weight: normal;
-  color: #ece9e9;
+  color: #e3e8e5;
 }
 
 .ui.progress .bar {
@@ -723,8 +738,7 @@ html body {
 
 .react-calendar__month-view {
   padding: 12px 0px;
-  border-top: #b09e99 4px double;
-  border-bottom: #b09e99 4px double;
+  border-top: #9baba1 4px double;
   background-color: test1;
 }
 
@@ -771,19 +785,20 @@ html body {
 }
 
 .react-calendar__tile--now {
-  background-color: #fad4c0;
+  background-color: RGBA(162, 227, 196, 0.5);
 }
 
 .react-calendar__tile--range {
-  background-color: RGBA(239, 255, 176, 0.5);
+  background-color: #ade6ca;
 }
 
 .react-calendar__tile--hover {
-  background-color: RGBA(239, 255, 176, 0.5);
+  background-color: #ade6ca;
 }
 
 .header {
-  background-color: #fad4c0;
+  background-color: #3c493f;
+  border-bottom: #516355 7px solid;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -833,6 +848,8 @@ html body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  left: 18%;
+  position: absolute;
 }
 
 .menu {
@@ -854,7 +871,7 @@ html body {
   -ms-flex-line-pack: stretch;
       align-content: stretch;
   position: relative;
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
   width: 30vw;
   max-height: auto;
   margin: 0 auto;
@@ -884,9 +901,9 @@ html body {
   z-index: 2;
   width: 10%;
   height: 100%;
-  background-color: #f9f8f8;
-  border-right: #8d7c7c 10px double;
-  border-left: #ece9e9 4px solid;
+  background-color: #f0f7f4;
+  border-right: #9baba1 10px double;
+  border-left: #e3e8e5 4px solid;
 }
 
 .menu__options {
@@ -895,7 +912,7 @@ html body {
   left: 0;
   z-index: 1;
   width: 100%;
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
 }
 
 .sideBar {
@@ -953,14 +970,14 @@ html body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   position: absolute;
-  top: -15px;
+  top: -85px;
   width: 28vw;
   height: 100%;
 }
 
 .footer {
-  border-top: #8d7c7c 10px ridge;
-  background-color: #2e2c2f;
+  border-top: #9baba1 10px ridge;
+  background-color: #1f2321;
   position: fixed;
   z-index: 4;
   bottom: 0;
@@ -1056,11 +1073,7 @@ html body {
 }
 
 .home__header {
-  border-bottom: #fee9e1 7px solid;
-}
-
-.home__header__logo {
-  margin-left: 36px;
+  border-bottom: #516355 7px solid;
 }
 
 .calendar {
@@ -1087,7 +1100,7 @@ html body {
   position: absolute;
   z-index: 1;
   top: 0;
-  background-color: #f9f8f8;
+  background-color: #f0f7f4;
   width: 100%;
   padding: 20px 0px;
 }
@@ -1182,39 +1195,10 @@ html body {
 }
 
 .expense__form--input__button:hover {
-  background-color: #fad4c0;
+  background-color: #ade6ca;
 }
 
 .expense__form--label {
   margin: 24px 0px;
-}
-
-.stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.stats__text {
-  width: 50%;
-  text-align: center;
-}
-
-.stats__thx {
-  width: 50%;
-  text-align: center;
-  text-transform: capitalize;
 }
 /*# sourceMappingURL=main.css.map */

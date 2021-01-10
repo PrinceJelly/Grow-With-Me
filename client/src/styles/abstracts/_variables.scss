@@ -3,15 +3,15 @@ $font-size: 8px;
 
 $primary-background: #ffffff;
 
-$secondary-background: #2e2c2f;
+$secondary-background: #1f2321;
 $secondary-background-opacity: rgba(46, 44, 47, 0.5);
 
-$primary-layout: #fad4c0;
+$primary-layout: #3c493f;
 $secondary-layout: #475b63;
-$tertiary-layout: #fee9e1;
+$tertiary-layout: #516355;
 
-$button-start: #729b79;
-$button-focus-clicked-start: #fad4c0;
+$button-start: #7e8d85;
+$button-focus-clicked-start: #6d7b74;
 
 $button-global: #f9f8f8;
 $button-global-focus-clicked: #f9f8f8;
@@ -20,24 +20,22 @@ $primary-font: #2e2c2f;
 $secondary-font: #f2f7f5;
 $tertiary-font: #ffffff;
 
-$menu-primary-background: #f9f8f8;
-$menu-primary-layout: #2e2c2f;
+$menu-primary-background: #f0f7f4;
+$menu-primary-layout: #1f2321;
 $menu-secondary-layout: #729b79a6;
 $menu-tetiary-layout: #519e8a;
-$menu-navigation--hover: #b09e99;
-$menu-navigation--hover-lite: #bdb2b23b;
-$menu-navigation--hover-lighter: #f9f8f8d7;
-$menu-border-panel--right: #ece9e9;
+$menu-navigation--hover: RGBA(162, 227, 196, 0.5);
+$menu-border-panel--right: #e3e8e5;
 
-$border: #8d7c7c;
-$border-accent: #2e2c2f;
+$border: #9baba1;
+$border-accent: #9baba1;
 
-$calendar-primary: #f9f8f8;
-$calendar-navigation: #2e2c2f;
-$calendar-aria-labels: #f9f8f8;
-$calendar-active-now: #fad4c0;
-$calendar-hover: #fad4c0;
-$calendar-hover-lite: RGBA(239, 255, 176, 0.5);
+$calendar-primary: #f0f7f4;
+$calendar-navigation: #1f2321;
+$calendar-aria-labels: #f0f7f4;
+$calendar-active-now: RGBA(162, 227, 196, 0.5);
+$calendar-hover: #ade6ca;
+$calendar-hover-lite: #ade6ca;
 
 $form-selection: #729b79a6;
 /******TESTING FOR COMPONENTS DEPENDENCIES | REACT LIBARIES ******/

@@ -2,7 +2,7 @@
   @extend .add-shadow;
 
   background-color: $primary-layout;
-
+  border-bottom: $tertiary-layout 7px solid;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -21,7 +21,6 @@
 
   &__item {
     margin: 0 spaceIncr(5);
-
     &__link {
       @extend .link-decoration;
     }
@@ -30,6 +29,8 @@
   &__container {
     &__links {
       @include flex;
+      left: 18%;
+      position: absolute;
     }
   }
 }

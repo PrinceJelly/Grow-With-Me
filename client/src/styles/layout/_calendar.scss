@@ -28,8 +28,7 @@
 
   &__month-view {
     padding: spaceIncr(1.5) spaceIncr(0);
-    border-top: $menu-navigation--hover 4px double;
-    border-bottom: $menu-navigation--hover 4px double;
+    border-top: $border 4px double;
     background-color: test1;
 
     &__weekdays {

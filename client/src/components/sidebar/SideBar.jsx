@@ -13,11 +13,6 @@ export default function SideBar() {
       newEntryShowing(true);
       statsPageShowing(false);
     }
-    if (event.target.id === "statsPageShowing") {
-      newEntryShowing(false);
-      statsPageShowing(true);
-    }
-
     if (event.target.id === "closeMenu") {
       newEntryShowing(false);
       statsPageShowing(false);
@@ -44,9 +39,7 @@ export default function SideBar() {
           </Button>
         </li>
         <li className="side-bar__list__item">
-          <Button addClass="btn__next" id="statsPageShowing" handleClick={handleShowing}>
-            Stats (Coming Soon!)
-          </Button>
+          <Button addClass="btn__next">Stats (Coming Soon!)</Button>
         </li>
       </ul>
     </aside>

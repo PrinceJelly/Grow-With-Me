@@ -8,7 +8,7 @@ const savingsRoute = "/savings";
 const goalsAPI = `${API}${goalsRoute}`;
 const expensesAPI = `${API}${expensesRoute}`;
 const savingsAPI = `${API}${savingsRoute}`;
-//        console.log(goalsAPI.data, savingsAPI.data, expensesAPI.data)
+
 /********************************** Goals Requests *********************************/
 export const getAllData = () => {
   return axios

@@ -9,7 +9,7 @@ export default function Stats() {
       <h1 className="expense__title">EXPENSE</h1>
       <Form>
         <InputField />
-        <InputField />
+        <input type="number"></input>
         <Button handleClick={postNewExpenses()}>Submit</Button>
       </Form>
     </section>
