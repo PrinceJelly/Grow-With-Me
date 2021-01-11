@@ -1,5 +1,5 @@
 const Goals = require("../models/goalsModel");
-const Savings = require("../models/savingsModel");
+
 /********************GET ALL GOALS******************/
 
 function get(req, res) {
@@ -13,9 +13,19 @@ function get(req, res) {
 /*******************POST GOALS********************/
 
 function post(req, res) {
+  const pets = [
+    "https://i.imgur.com/qaX8GEm.png",
+    "https://i.imgur.com/w7DNIyk.png",
+    "https://i.imgur.com/iv2Bevv.png",
+  ];
+  const randomPet = pets[Math.floor(Math.random() * pets.length)];
+
   new Goals({
     myGoal: req.body.myGoal,
     goal: req.body.goal,
+    myPet: req.body.myPet,
+    goalRemainder: req.body.goal,
+    img_url: randomPet,
   })
     .save()
     .then((newGoals) => {

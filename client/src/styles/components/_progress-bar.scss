@@ -18,5 +18,9 @@
 .ui.progress {
   .bar {
     background: $menu-tetiary-layout;
+    .progress {
+      left: 150px;
+      text-align: center;
+    }
   }
 }

@@ -6,7 +6,7 @@ module.exports = [
     goalRemainder: 999950.0,
     savedToDate: 50.0,
     myPet: "George",
-    pet_id: 1,
+    img_url: "https://i.imgur.com/qaX8GEm.png",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ module.exports = [
     goalRemainder: 20900.0,
     savedToDate: 100.0,
     myPet: "Sharky",
-    pet_id: 2,
+    img_url: "https://i.imgur.com/tmFKcz6.png",
   },
   {
     id: 3,
@@ -24,6 +24,6 @@ module.exports = [
     goalRemainder: 12140.0,
     savedToDate: 860.0,
     myPet: "Link",
-    pet_id: 3,
+    img_url: "https://i.imgur.com/iv2Bevv.png",
   },
 ];

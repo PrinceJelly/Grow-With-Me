@@ -623,6 +623,11 @@
   background: #519e8a;
 }
 
+.ui.progress .bar .progress {
+  left: 150px;
+  text-align: center;
+}
+
 .clock {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,7 +1,6 @@
-import { DateTime } from "luxon";
 import { valueOptions } from "../../utils/Validation";
 export default function SaveCard({ saveItem }) {
-  const { saved, goals, date, savingsUpdate } = saveItem;
+  const { saved, goals } = saveItem;
 
   return (
     <li className="card__item">
