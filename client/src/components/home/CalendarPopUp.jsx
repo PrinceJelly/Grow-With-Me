@@ -8,12 +8,13 @@ const Plus = <Icon addClass="icon" name="plus.svg" />;
 const Minus = <Icon addClass="icon" name="minus.svg" />;
 const DownArrow = <Icon addClass="icon" name="arrow-down.svg" />;
 
-export default function CalendarCard({ viewExpense, viewSavings }) {
+export default function CalendarCard({ viewExpense, viewSavings, selectedValue, DATE_OPTIONS }) {
   const [showingSavings, setShowingSavings] = useState(false);
   const [showingExpenses, setShowingExpenses] = useState(false);
   //I wonder if this is even nescessary? The second state
+
   const getSavingsLength = viewSavings.length;
-  const getExpenesLength = viewExpense.length;
+  const getExpensesLength = viewExpense.length;
 
   const handleShowing = (event) => {
     if (event.target.id === "showingSavings") {
@@ -24,14 +25,13 @@ export default function CalendarCard({ viewExpense, viewSavings }) {
       setShowingExpenses(true);
       setShowingSavings(false);
     }
-    if (event.target.id === "showingAll") {
-      setShowingSavings(true);
-      setShowingExpenses(true);
-    }
   };
 
   return (
-    <article className="card-section__content--main">
+    <article className="card-section__content">
+      <span className="calendar__date">
+        <h1>{selectedValue.toLocaleDateString("en-CA", DATE_OPTIONS)}</h1>
+      </span>
       <div className="card-section__button--container">
         <Button addClass="btn__card" id="showingSavings" handleClick={handleShowing}>
           {Plus}Savings
@@ -39,15 +39,11 @@ export default function CalendarCard({ viewExpense, viewSavings }) {
         <Button addClass="btn__card" id="showingExpenses" handleClick={handleShowing}>
           {Minus}Expenses
         </Button>
-        <Button addClass="btn__card" id="showingAll" handleClick={handleShowing}>
-          {DownArrow}View All
-        </Button>
       </div>
-      <section className="card-section__content--cards">
-        <h1>My Entries for today : </h1>
+      <section className="card-section__cards">
         {showingSavings ? (
           <div className="card__container">
-            <h1>{getSavingsLength} Posted</h1>
+            <h1>My Entries for today : {getSavingsLength} Posted</h1>
             {viewSavings &&
               viewSavings.map((saveItem) => {
                 return (
@@ -61,7 +57,7 @@ export default function CalendarCard({ viewExpense, viewSavings }) {
           </div>
         ) : (
           <div className="card__container">
-            <h1>{getExpenesLength} Posted</h1>
+            <h1>My Entries for today : {getExpensesLength} Posted</h1>
             {viewExpense &&
               viewExpense.map((expenseItem) => {
                 return (

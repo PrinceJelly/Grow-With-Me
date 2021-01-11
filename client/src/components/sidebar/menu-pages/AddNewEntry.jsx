@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Savings from "./Savings";
 import Expense from "./Expense";
 import Pet from "./newPet";
-import { Dropdown } from "semantic-ui-react";
 
 export default function AddNewEntry() {
   const [newGoal, newGoalShowing] = useState(false);
@@ -32,7 +31,7 @@ export default function AddNewEntry() {
       <form className="addNewEntry__form__selection--container">
         <label className="addNewEntry__form__label">What would you like to add?</label>
         <select
-          class="ui search selection dropdown addNewEntry__form__selection"
+          className="ui search selection dropdown addNewEntry__form__selection"
           onChange={handleSelected}
         >
           <option value="Please select an option">Please select an option</option>

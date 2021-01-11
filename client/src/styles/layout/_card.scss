@@ -6,6 +6,10 @@
 .card {
 }
 
-.card__content {
-  @include flex;
+.card-section {
+  @include flex(column, flex-start);
+  padding: spaceIncr(4) spaceIncr(2);
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
 }

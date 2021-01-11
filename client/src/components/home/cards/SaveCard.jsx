@@ -5,11 +5,8 @@ export default function SaveCard({ saveItem }) {
 
   return (
     <li className="card__item">
-      <span className="card__date__container">
-        <p className="card__date">{DateTime.fromISO(date).toLocaleString()}</p>
-      </span>
       <span className="card__title__container">
-        <p className="card__title__container--title">Savings</p>
+        <p className="card__title__container--title">Saved</p>
         <p className="card__title__container--dollar">
           +{saved.toLocaleString("en-US", valueOptions)}
         </p>

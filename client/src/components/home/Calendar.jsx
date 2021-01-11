@@ -2,13 +2,14 @@ import Calendar from "react-calendar";
 import React, { useState, useEffect } from "react";
 import CalendarPopUp from "./CalendarPopUp";
 import Icon from "../resuable/React-Svg-Library";
+import { DATE_OPTIONS } from "../utils/Validation";
 import { getAllData } from "../utils/Axios";
+
+const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
+const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
 
 export default function Calender() {
   const [selectedValue, setSelectedValue] = useState(new Date(), []);
-  const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
-  const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
-  const DATE_OPTIONS = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
 
   const [expense, setExpense] = useState(null);
   const [save, setSave] = useState(null);
@@ -36,27 +37,26 @@ export default function Calender() {
   return (
     <section className="calendar">
       <div className="calendar__container">
-        <Calendar
-          onClickDay={(event) => {
-            onClickDay(event);
-          }}
-          minDetail={"decade"}
-          calendarType={"US"}
-          locale={"en-CA"}
-          onChange={setSelectedValue}
-          value={selectedValue}
-          maxDate={new Date()}
-          minDate={new Date(2019, 11, 31)}
-          next2Label={null}
-          prev2Label={null}
-          prevLabel={arrowLeft}
-          nextLabel={arrowRight}
-        />
+        <div className="calendar__container--mod">
+          <Calendar
+            onClickDay={(event) => {
+              onClickDay(event);
+            }}
+            minDetail={"decade"}
+            calendarType={"US"}
+            locale={"en-CA"}
+            onChange={setSelectedValue}
+            value={selectedValue}
+            maxDate={new Date()}
+            minDate={new Date(2019, 11, 31)}
+            next2Label={null}
+            prev2Label={null}
+            prevLabel={arrowLeft}
+            nextLabel={arrowRight}
+          />
+        </div>
       </div>
       <section className="card-section">
-        <span className="card-section__content__title">
-          <p>{selectedValue.toLocaleDateString("en-CA", DATE_OPTIONS)}</p>
-        </span>
         {
           (save,
           expense === null ? (
@@ -66,6 +66,7 @@ export default function Calender() {
               selectedValue={selectedValue}
               viewSavings={viewSavings}
               viewExpense={viewExpense}
+              DATE_OPTIONS={DATE_OPTIONS}
             />
           ))
         }

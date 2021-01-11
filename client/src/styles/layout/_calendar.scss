@@ -1,7 +1,5 @@
 .react-calendar {
   @extend .calendar-main;
-  position: relative;
-  z-index: 0;
 
   &__navigation {
     @extend .calendar-navigation;

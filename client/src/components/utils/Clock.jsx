@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-
+import { DATE_OPTIONS } from "./Validation";
 export default function ClockComp() {
   const [time, setTime] = useState(new Date(), []);
 
@@ -13,7 +13,6 @@ export default function ClockComp() {
   function tick() {
     setTime(new Date());
   }
-  const DATE_OPTIONS = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
   return (
     <div className="clock">
       <h1 className="clock__time">{time.toLocaleTimeString()}</h1>
