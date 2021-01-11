@@ -5,6 +5,9 @@ const Goal = bookshelf.model("Goal", {
   savings: function () {
     return this.hasMany("Saving");
   },
+  pets: function () {
+    return this.hasMany("Pet");
+  },
 });
 
 module.exports = Goal;
