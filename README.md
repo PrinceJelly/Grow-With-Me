@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-## Grow With Me
+# Grow With Me
 
 Libraries/Dependancies Used: 
 React-Calendar
@@ -62,7 +61,7 @@ Your server should be up in running, if there are problems please refer to the [
 
 ## ROADMAP FOR GROWWITHME: 
 
-# Entry : Janaury 11 2021
+#### Entry : Janaury 11 2021
 
 Update the ADD NEW ENTRY PAGE.
 Enable validation, 
@@ -96,17 +95,8 @@ There's a lot more work to be done, and a lot more code clean-up.
 
 See you on January 4th!
 
-# Entry : July 17th 2021
+#### Entry : July 17th 2021
 
 There are a few features that are still needing to be worked on which would be contruction of the STATS PAGE and as well as the responsive design of GROW-WITH-ME throughout devices.
 
 The other features i'd like to add in the future is the pets being able to evolve. 
-=======
-# Grow W/ me. Version-1
-
-Grow W/ me. is an application to help budget your money without it being too boring. 
-
-# Installation 
-
-Run npm i or yarn install in both server and client folders. 
->>>>>>> 2375698041a3de64d89461838d184159f465791b
