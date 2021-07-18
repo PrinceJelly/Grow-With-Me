@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bookshelf": "^1.2.0",
+    "bookshelf-json-columns": "^3.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.12",

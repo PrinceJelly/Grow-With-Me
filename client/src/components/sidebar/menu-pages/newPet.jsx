@@ -6,15 +6,13 @@ import Button from "../../resuable/Button";
 
 const goalAPI = "http://localhost:8080/goals";
 
-export default function NewPet() {
+export default function NewPet({ getData }) {
   const [passChecks, validateError] = useState(null);
 
-  const postNewGoal = async (postGoal) => {
-    try {
-      return axios.post(goalAPI, postGoal);
-    } catch (err) {
-      return console.log(err, "Cannot post Goal");
-    }
+  const postNewGoal = (postGoal) => {
+    axios.post(goalAPI, postGoal).then(() => {
+      getData();
+    });
   };
   const clearError = ({ target }) => {
     target.classList.remove("validationerror");
@@ -22,20 +20,20 @@ export default function NewPet() {
   const addCheck = ({ target }) => {
     let passedChecks = false;
 
-    if (!target.typeInput.value.trim()) {
-      target.typeInput.parentElement.classList.toggle("validationerror");
+    if (!target.myGoalInput.value.trim()) {
+      target.myGoalInput.parentElement.classList.toggle("validationerror");
       passedChecks = false;
     } else {
       passedChecks = true;
     }
-    if (!target.spentInput.value.trim()) {
-      target.spentInput.parentElement.classList.toggle("validationerror");
+    if (!target.myPetInput.value.trim()) {
+      target.myPetInput.parentElement.classList.toggle("validationerror");
       passedChecks = false;
     } else {
       passedChecks = true;
     }
-    if (!target.spentInput.value.trim()) {
-      target.spentInput.parentElement.classList.toggle("validationerror");
+    if (!target.goalInput.value.trim()) {
+      target.goalInput.parentElement.classList.toggle("validationerror");
       passedChecks = false;
     } else {
       passedChecks = true;
@@ -48,21 +46,46 @@ export default function NewPet() {
     event.preventDefault();
     if (addCheck(event)) {
       const newEntry = {
-        type: event.target.typeInput.value,
-        spent: event.target.spentInput.value,
+        myGoal: event.target.myGoalInput.value,
+        myPet: event.target.myPetInput.value,
+        goal: event.target.goalInput.value,
       };
       postNewGoal(newEntry);
     }
-    console.log("clicked");
   };
   return (
-    <section className="addNewEntry expense">
-      <h1 className="expense__title">EXPENSE</h1>
+    <section className="addNewEntry form">
+      <h1 className="form__title">GOAL</h1>
       <Form handleSubmit={handleClickSubmit}>
-        <InputField removeError={clearError} type="text" name="typeInput" />
-        <InputField removeError={clearError} type="text" name="typeInput" />
-        <InputField removeError={clearError} type="number" name="spentInput" />
-        <Button>Submit</Button>
+        <label className="form__label">What would you like to add?</label>
+        <InputField
+          addClass="form__input"
+          removeError={clearError}
+          type="text"
+          name="myGoalInput"
+          placeholder="I would like to save towards..."
+          required
+        />
+        <label className="form__label">What's your companions name?</label>
+        <InputField
+          addClass="form__input"
+          removeError={clearError}
+          type="text"
+          name="myPetInput"
+          placeholder="My companions name is..."
+          required
+        />
+        <label className="form__label">How much do you want to save?</label>
+        <InputField
+          addClass="form__input"
+          removeError={clearError}
+          type="number"
+          name="goalInput"
+          min="1"
+          placeholder="I would like to save..."
+          required
+        />
+        <Button addClass="form__button">Submit</Button>
       </Form>
     </section>
   );

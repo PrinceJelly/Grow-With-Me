@@ -7,7 +7,7 @@ import Button from "../../resuable/Button";
 
 const savingsAPI = "http://localhost:8080/savings";
 
-export default function Savings() {
+export default function Savings({ getData }) {
   const [passChecks, validateError] = useState(null);
   const [goalAPI, setGoals] = useState(null);
 
@@ -15,12 +15,10 @@ export default function Savings() {
     getAllGoals().then((res) => setGoals(res));
   }, []);
 
-  const postNewSavings = async (postSaved) => {
-    try {
-      return axios.post(savingsAPI, postSaved);
-    } catch (err) {
-      return console.log(err, "Cannot post Expenses");
-    }
+  const postNewSavings = (postSaved) => {
+    axios.post(savingsAPI, postSaved).then(() => {
+      getData();
+    });
   };
   const clearError = ({ target }) => {
     target.classList.remove("validationerror");
@@ -44,28 +42,72 @@ export default function Savings() {
 
     return passedChecks;
   };
+
+  const [getDate, setDate] = useState("");
+  function newDate() {
+    const tdDates = new Date();
+    let month = tdDates.getMonth() + 1;
+    let day = tdDates.getDate();
+    const year = tdDates.getFullYear();
+
+    if (month < 10) {
+      month = "0" + month.toString();
+    }
+    if (day < 10) {
+      day = "0" + day.toString();
+    }
+    const getDate = year + "-" + month + "-" + day;
+    const getDateToString = getDate.toString();
+
+    return getDateToString;
+  }
+
   const handleClickSubmit = (event) => {
     event.preventDefault();
     if (addCheck(event)) {
       const newEntry = {
         goalId: event.target.goalInput.value,
         saved: event.target.savedInput.value,
+        date: event.target.todaysDate.value,
       };
       postNewSavings(newEntry);
     }
   };
+
   return (
-    <section className="addNewEntry expense">
-      <h1 className="expense__title">SAVINGS</h1>
+    <section className="addNewEntry form">
+      <h1 className="form__title">SAVINGS</h1>
       <Form handleSubmit={handleClickSubmit}>
-        <select name="goalInput">
+        <label className="form__label ">Which goal did you contribute to?</label>
+        <select name="goalInput" className="ui search selection dropdown form__dropdown">
           {goalAPI &&
             goalAPI.map((options) => {
               return <option value={options.id}>{options.myGoal}</option>;
             })}
         </select>
-        <InputField removeError={clearError} type="number" name="savedInput" />
-        <Button>Submit</Button>
+        <label className="form__label">How much did you save?</label>
+        <InputField
+          addClass="form__input"
+          removeError={clearError}
+          type="number"
+          name="savedInput"
+          min="1"
+          placeholder="I have saved..."
+          required
+        />
+        <label className="form__label">
+          When did you save? <span className="form__label--span">Please enter a date:</span>
+        </label>
+        <input
+          className="ui search selection dropdown form__date-range"
+          name="todaysDate"
+          type="date"
+          min="2019-12-31"
+          max={newDate()}
+          onChange={(event) => setDate(event.target.value)}
+          required
+        />
+        <Button addClass="form__button">Submit</Button>
       </Form>
     </section>
   );

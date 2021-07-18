@@ -5,22 +5,22 @@
           filter: drop-shadow(20px 20px 0px rgba(162, 227, 196, 0.5));
 }
 
-.add-shadow, .header {
+.add-shadow, .card__list, .header, .main-menu__card-list {
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.add-border-radius, .progress-bar__label, .expense__form--input {
+.add-border-radius, .form__input, .card__list, .main-menu__card-list {
   border-radius: 5px;
 }
 
 /**********************************NO STYLES*************************************/
-.no-border-outline, .icon-global, .icon, .btn-global, .btn__CTA, .btn__card, .expense__form--input__button, .calendar-tile, .react-calendar__tile, .calendar-navigation--arrow, .react-calendar__navigation__arrow, .calendar-navigation--label, .react-calendar__navigation__label, .btn__start, .btn__start:focus, .btn__open, .expense__form--input {
+.no-border-outline, .icon-global, .icon, .btn-global, .btn__CTA, .btn__card, .form__button, .modal__btn, .calendar-tile, .react-calendar__tile, .calendar-navigation--arrow, .react-calendar__navigation__arrow, .calendar-navigation--label, .react-calendar__navigation__label, .btn__start, .btn__start:focus, .btn__open, .form__input {
   border: none;
   outline: none;
 }
 
-.no-list-style, .header__list, .side-bar__list {
+.no-list-style, .card__list, .header__list, .side-bar__list, .main-menu__card-list {
   list-style: none;
 }
 
@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 
-.btn-global, .btn__CTA, .btn__card, .expense__form--input__button {
+.btn-global, .btn__CTA, .btn__card, .form__button, .modal__btn {
   width: 150px;
   height: 45px;
   border-radius: 5px;
@@ -63,13 +63,13 @@
   background-color: #f9f8f8;
 }
 
-.btn-global:hover, .btn__CTA:hover, .btn__card:hover, .expense__form--input__button:hover {
+.btn-global:hover, .btn__CTA:hover, .btn__card:hover, .form__button:hover, .modal__btn:hover {
   color: #2e2c2f;
   background-color: #f9f8f8;
 }
 
 /***********************************FONT STYLES****************************************/
-.font-regular, .clock__date {
+.font-regular, .clock__date, .card__entries, .calendar__date-picked, .main-menu__card-list__goal {
   font-family: "Exo 2";
   font-weight: 300;
   font-size: 20px;
@@ -81,6 +81,27 @@
   font-weight: 300;
   font-size: 40px;
   text-transform: uppercase;
+}
+
+.font-regular-lite-small, .main-menu__card-list__label {
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 12.8px;
+  text-transform: uppercase;
+}
+
+.font-regular-lite-list, .card__item {
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 14.4px;
+  text-transform: uppercase;
+}
+
+.font-regular-lite-modal, .modal__text {
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 14.4px;
+  font-style: italic;
 }
 
 .font-regular-hvy {
@@ -101,7 +122,7 @@
   text-transform: uppercase;
 }
 
-.font-button, .btn__CTA, .expense__form--input__button {
+.font-button, .btn__CTA, .modal__btn {
   font-family: "Exo 2";
   font-size: 16px;
   font-weight: 300;
@@ -111,7 +132,7 @@
   text-transform: capitalize;
 }
 
-.font-button--big, .btn__next, .btn__card {
+.font-button--big, .btn__next, .btn__card, .form__button {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
@@ -121,7 +142,7 @@
   text-transform: uppercase;
 }
 
-.font-button--secondary, .btn__start__txt {
+.font-button--secondary, .btn__start__txt, .modal__title {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 500;
@@ -152,19 +173,19 @@
   text-transform: uppercase;
 }
 
-.font-form, .ui.search.selection.dropdown {
+.font-form, .form__label--span, .ui.search.selection.dropdown {
   font-family: "Exo 2";
   font-size: 16px;
   font-weight: 300;
 }
 
-.font-form-label, .progress-bar__label, .addNewEntry__form__label, .expense__form--label {
+.font-form-label, .form__label, .main-menu__card-list__pet__pet-name, .addNewEntry__form__label {
   font-family: "Exo 2";
   font-size: 20px;
   font-weight: 300;
 }
 
-.font-form-title, .expense__title {
+.font-form-title, .form__title {
   font-family: "Exo 2";
   font-style: italic;
   font-weight: 300;
@@ -250,7 +271,7 @@
 /**********************************MODAL STYLES*************************************/
 /**********************************FORM STYLES*************************************/
 /**********************************MISC STYLES*************************************/
-.polygon, .btn__start {
+.polygon, .btn__start, .main-menu__card-list__pet {
   -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
           clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
@@ -604,27 +625,46 @@
   background-color: RGBA(162, 227, 196, 0.5);
 }
 
-.progress-bar {
-  position: relative;
-  bottom: -40px;
-  left: 100px;
-  width: 320px;
+.btn__card {
+  margin: 8px;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: #b1bfb4;
 }
 
-.progress-bar__label {
-  background-color: rgba(46, 44, 47, 0.589);
-  font-size: 16px;
-  text-transform: capitalize;
-  font-weight: normal;
-  color: #e3e8e5;
+.btn__card:hover {
+  background-color: #97aa9c;
+}
+
+.btn__card--text {
+  padding: 0px 8px;
+}
+
+.progress-bar {
+  width: 270px;
 }
 
 .ui.progress .bar {
   background: #519e8a;
+  height: 20px;
 }
 
 .ui.progress .bar .progress {
-  left: 150px;
+  left: 120px;
   text-align: center;
 }
 
@@ -651,6 +691,75 @@
   text-align: center;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.form__label {
+  margin: 24px 0px;
+}
+
+.form__label--span {
+  padding: 8px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.form__input {
+  text-align: center;
+  width: 15vw;
+  height: 4vh;
+  border: rgba(34, 36, 38, 0.15) 1px solid;
+}
+
+.form__input:focus .form__input:active {
+  border: rgba(34, 36, 38, 0.15) 1px solid;
+}
+
+.form__button {
+  margin: 32px;
+  background-color: #7e8d85;
+  color: white;
+}
+
+.form__button:hover {
+  color: white;
+  background-color: #6d7b74;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -662,6 +771,99 @@ html body {
   font-family: "Exo 2";
   background-color: #ffffff;
   width: 100vw;
+}
+
+.card__list {
+  border-top: #9baba1 6px solid;
+  margin: 16px;
+}
+
+.card__item {
+  padding: 16px;
+  background-color: #f0f7f4;
+}
+
+.card__title__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 8px 8px;
+  border-bottom: #9baba1 2px solid;
+}
+
+.card__title__container--title {
+  margin: 0;
+}
+
+.card__type__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 8px 8px;
+}
+
+.card__type__container--type {
+  margin: 0;
+}
+
+.card__type__container--Contributions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.card__entries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .card-section {
@@ -682,8 +884,55 @@ html body {
       flex-wrap: nowrap;
   padding: 32px 16px;
   height: 100%;
-  width: 100%;
+  width: 19.1vw;
   overflow-y: scroll;
+}
+
+.card-section__button--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.modal__btn {
+  color: white;
+  background-color: #b1bfb4;
+  width: 60px;
+  height: 25px;
+}
+
+.modal__btn:hover {
+  background-color: #97aa9c;
+}
+
+.modal__btn--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .react-calendar__century-view .react-calendar__tile {
@@ -1088,6 +1337,115 @@ html body {
   width: 100%;
 }
 
+.calendar__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.main-menu {
+  position: absolute;
+  height: 95%;
+  left: 50px;
+  z-index: 1;
+  overflow-y: scroll;
+  padding: 16px 24px;
+}
+
+.main-menu__card-list {
+  border-top: #9baba1 6px solid;
+  background-color: #f0f7f4;
+  width: 21vw;
+  margin: 40px 0px;
+}
+
+.main-menu__card-list:hover {
+  background-color: RGBA(162, 227, 196, 0.5);
+}
+
+.main-menu__card-list__goal {
+  padding: 8px 16px;
+}
+
+.main-menu__card-list__item {
+  padding: 8px 0px;
+}
+
+.main-menu__card-list__label--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.main-menu__card-list__col-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: #9baba1 2px solid;
+  padding: 8px 0px;
+}
+
+.main-menu__card-list__col-container--info {
+  margin: 8px 0px;
+}
+
+.main-menu__card-list__pet {
+  background-image: url("../assets/img/petbg-5.jpg");
+  background-size: contain;
+  -o-object-position: -1.5px -10px;
+     object-position: -1.5px -10px;
+  width: 90px;
+  height: 90px;
+}
+
+.main-menu__card-list__pet__pet-name {
+  margin: 16px 0px;
+}
+
+.main-menu__card-list__pet--img-container {
+  margin: 16px 12px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #9baba1;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c493f;
+  border-radius: 10px;
+}
+
 .newPage {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1125,6 +1483,10 @@ html body {
   border-color: #729b79a6;
 }
 
+.addNewEntry__title {
+  color: #2e2c2f;
+}
+
 .addNewEntry__form__selection {
   padding: 0px;
   margin: 16px;
@@ -1132,7 +1494,7 @@ html body {
 
 .addNewEntry__form__selection--container {
   margin-top: 40px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1148,64 +1510,5 @@ html body {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-}
-
-.expense {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.expense__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.expense__form--input {
-  text-align: center;
-  width: 15vw;
-  height: 3vh;
-  border: rgba(34, 36, 38, 0.15) 1px solid;
-}
-
-.expense__form--input:focus .expense__form--input:active {
-  border: rgba(34, 36, 38, 0.15) 1px solid;
-}
-
-.expense__form--input__button {
-  margin: 40px;
-}
-
-.expense__form--input__button:hover {
-  background-color: #ade6ca;
-}
-
-.expense__form--label {
-  margin: 24px 0px;
 }
 /*# sourceMappingURL=main.css.map */

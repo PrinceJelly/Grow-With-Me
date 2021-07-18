@@ -15,6 +15,7 @@ function post(req, res) {
   new Expense({
     type: req.body.type,
     spent: req.body.spent,
+    date: req.body.date,
   })
     .save()
     .then((newExpense) => {

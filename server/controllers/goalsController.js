@@ -15,8 +15,8 @@ function get(req, res) {
 function post(req, res) {
   const pets = [
     "https://i.imgur.com/qaX8GEm.png",
-    "https://i.imgur.com/w7DNIyk.png",
-    "https://i.imgur.com/iv2Bevv.png",
+    "https://i.imgur.com/tmFKcz6.png",
+    "https://i.imgur.com/yKDSVyI.png",
   ];
   const randomPet = pets[Math.floor(Math.random() * pets.length)];
 

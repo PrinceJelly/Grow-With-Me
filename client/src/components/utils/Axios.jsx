@@ -114,7 +114,7 @@ export const patchExpensesById = (id) => {
     .catch((err) => console.log(err, "Unable to patch. ID not found, please provide a vaild ID"));
 };
 
-export const deleteExpenesesByID = (id) => {
+export const deleteExpensesByID = (id) => {
   return axios
     .delete(`${expensesAPI}/${id}`)
     .then((res) => res.data)

@@ -80,6 +80,27 @@
   font-size: font-size(5);
   text-transform: uppercase;
 }
+.font-regular-lite-small {
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: font-size(1.6);
+  text-transform: uppercase;
+}
+
+.font-regular-lite-list {
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: font-size(1.8);
+  text-transform: uppercase;
+}
+
+.font-regular-lite-modal {
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: font-size(1.8);
+  font-style: italic;
+}
+
 .font-regular-hvy {
   font-family: "Exo 2";
   font-weight: 500;

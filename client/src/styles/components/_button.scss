@@ -69,4 +69,16 @@
 .btn__card {
   @extend .font-button--big;
   @extend .btn-global;
+  margin: spaceIncr(1);
+  padding: spaceIncr(1);
+  @include flex();
+  background-color: #b1bfb4;
+
+  &:hover {
+    background-color: #97aa9c;
+  }
+
+  &--text {
+    padding: spaceIncr(0) spaceIncr(1);
+  }
 }

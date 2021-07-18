@@ -2,9 +2,9 @@ import Button from "../resuable/Button";
 import AddNewEntry from "../sidebar/menu-pages/AddNewEntry";
 import Stats from "../sidebar/menu-pages/Stats";
 import React, { useState } from "react";
-import ClockComp from "../utils/Clock";
+import ClockComp from "../resuable/Clock";
 
-export default function SideBar() {
+export default function SideBar({ getData }) {
   const [newEntryPage, newEntryShowing] = useState(false);
   const [statsPage, statsPageShowing] = useState(false);
 
@@ -23,7 +23,7 @@ export default function SideBar() {
     <aside className="side-bar__content">
       <section className="side-bar__pages">
         <ClockComp />
-        {newEntryPage ? <AddNewEntry newPageShowing={newEntryShowing} /> : ""}
+        {newEntryPage ? <AddNewEntry getData={getData} newPageShowing={newEntryShowing} /> : ""}
         {statsPage ? <Stats newPageShowing={statsPageShowing} /> : ""}
       </section>
 

@@ -24,6 +24,6 @@ module.exports = [
     goalRemainder: 12140.0,
     savedToDate: 860.0,
     myPet: "Link",
-    img_url: "https://i.imgur.com/iv2Bevv.png",
+    img_url: "https://i.imgur.com/yKDSVyI.png",
   },
 ];

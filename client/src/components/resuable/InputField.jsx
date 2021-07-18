@@ -15,6 +15,7 @@ export default function InputField({
       defaultValue={value}
       type={type ? type : "text"}
       onChange={removeError && ((e) => removeError(e, errorClass))}
+      required
     />
   );
 }

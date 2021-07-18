@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { DATE_OPTIONS } from "./Validation";
+import { DATE_OPTIONS } from "../utils/Validation";
 export default function ClockComp() {
   const [time, setTime] = useState(new Date(), []);
 

@@ -1,0 +1,47 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form {
+  @include flex(column);
+  &__title {
+    @extend .font-form-title;
+  }
+
+  &__label {
+    margin: spaceIncr(3) spaceIncr(0);
+    @extend .font-form-label;
+
+    &--span {
+      padding: spaceIncr(1) spaceIncr(0);
+      @include flex();
+      @extend .font-form;
+    }
+  }
+  &__input {
+    @extend .add-border-radius;
+    @extend .no-border-outline;
+    text-align: center;
+    width: 15vw;
+    height: 4vh;
+    border: rgba(34, 36, 38, 0.15) 1px solid;
+
+    &:focus &:active {
+      border: rgba(34, 36, 38, 0.15) 1px solid;
+    }
+  }
+
+  &__button {
+    margin: spaceIncr(4);
+    @extend .font-button--big;
+    @extend .btn-global;
+    background-color: $button-start;
+    color: white;
+
+    &:hover {
+      color: white;
+      background-color: $button-focus-clicked-start;
+    }
+  }
+}

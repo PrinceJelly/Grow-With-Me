@@ -1,71 +1,65 @@
-import Calendar from "react-calendar";
+// import Calendar from "react-calendar";
 import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
 import CalendarPopUp from "./CalendarPopUp";
 import Icon from "../resuable/React-Svg-Library";
 import { DATE_OPTIONS } from "../utils/Validation";
-import { getAllData } from "../utils/Axios";
+import PlaceholderSaveExpenses from "../resuable/placeholderSaveExpense";
 
 const arrowRight = <Icon addClass="svg__arrow--right" name="arrow-right.svg" />;
 const arrowLeft = <Icon addClass="svg__arrow--left" name="arrow-left.svg" />;
 
-export default function Calender() {
-  const [selectedValue, setSelectedValue] = useState(new Date(), []);
-
-  const [expense, setExpense] = useState(null);
-  const [save, setSave] = useState(null);
-
-  useEffect(() => {
-    getAllData().then((res) => {
-      setSave(res[1]);
-      setExpense(res[2]);
-    });
-  }, []);
+export default function Calender({ save, expense, getData }) {
+  const [selectedValue, setSelectedValue] = useState(new Date());
 
   const [viewSavings, setViewSavings] = useState(false);
   const [viewExpense, setViewExpense] = useState(false);
 
-  const onClickDay = (event) => {
-    setViewSavings(
-      save.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
-    );
-
-    setViewExpense(
-      expense.filter((e) => new Date(Date.parse(e.date)).toDateString() === event.toDateString())
-    );
-  };
+  useEffect(() => {
+    if (save !== null && save.length > 0) {
+      setViewSavings(
+        save.filter(
+          (e) => new Date(Date.parse(e.date)).toDateString() === selectedValue.toDateString()
+        )
+      );
+    }
+    if (expense !== null && expense.length > 0) {
+      setViewExpense(
+        expense.filter(
+          (e) => new Date(Date.parse(e.date)).toDateString() === selectedValue.toDateString()
+        )
+      );
+    }
+  }, [save, expense, selectedValue]);
 
   return (
     <section className="calendar">
       <div className="calendar__container">
-        <div className="calendar__container--mod">
-          <Calendar
-            onClickDay={(event) => {
-              onClickDay(event);
-            }}
-            minDetail={"decade"}
-            calendarType={"US"}
-            locale={"en-CA"}
-            onChange={setSelectedValue}
-            value={selectedValue}
-            maxDate={new Date()}
-            minDate={new Date(2019, 11, 31)}
-            next2Label={null}
-            prev2Label={null}
-            prevLabel={arrowLeft}
-            nextLabel={arrowRight}
-          />
-        </div>
+        <Calendar
+          minDetail={"decade"}
+          calendarType={"US"}
+          locale={"en-CA"}
+          onChange={setSelectedValue}
+          value={selectedValue}
+          maxDate={new Date()}
+          minDate={new Date(2019, 11, 31)}
+          next2Label={null}
+          prev2Label={null}
+          prevLabel={arrowLeft}
+          nextLabel={arrowRight}
+        />
       </div>
       <section className="card-section">
         {
           (save,
           expense === null ? (
-            "Nothing"
+            <PlaceholderSaveExpenses />
           ) : (
             <CalendarPopUp
               selectedValue={selectedValue}
               viewSavings={viewSavings}
               viewExpense={viewExpense}
+              getData={getData}
               DATE_OPTIONS={DATE_OPTIONS}
             />
           ))

@@ -21,9 +21,7 @@
 .addNewEntry {
   &__title {
     @extend .font-form-title--main;
-    // position: absolute;
-    // top: spaceIncr(3.5);
-    // left: spaceIncr(9);
+    color: $primary-font;
   }
   &__form {
     &__label {
@@ -36,44 +34,9 @@
 
       &--container {
         margin-top: spaceIncr(5);
-        margin-bottom: spaceIncr(3);
+        margin-bottom: spaceIncr(1);
         @include flex(column);
       }
-    }
-  }
-}
-
-.expense {
-  @include flex(column);
-  &__title {
-    @extend .font-form-title;
-  }
-  &__form {
-    @include flex(column);
-    &--input {
-      @extend .add-border-radius;
-      @extend .no-border-outline;
-      text-align: center;
-      width: 15vw;
-      height: 3vh;
-      border: rgba(34, 36, 38, 0.15) 1px solid;
-
-      &:focus &:active {
-        border: rgba(34, 36, 38, 0.15) 1px solid;
-      }
-      &__button {
-        margin: spaceIncr(5);
-        @extend .font-button;
-        @extend .btn-global;
-
-        &:hover {
-          background-color: $calendar-hover;
-        }
-      }
-    }
-    &--label {
-      margin: spaceIncr(3) spaceIncr(0);
-      @extend .font-form-label;
     }
   }
 }

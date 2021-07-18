@@ -1,5 +1,3 @@
-const { table } = require("console");
-
 exports.up = (knex) => {
   return knex.schema.createTable("expense", (table) => {
     table.increments("id").primary();

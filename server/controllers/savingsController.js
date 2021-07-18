@@ -24,13 +24,14 @@ async function post(req, res) {
     goal_id: req.body.goalId,
     saved: req.body.saved,
     savingsUpdate: currentGoal.goal - req.body.saved,
+    date: req.body.date,
   };
 
   const goal = await new Goals({ id: req.body.goalId })
     .save(
       {
         goalRemainder: currentGoal.goalRemainder - req.body.saved,
-        savedToDate: currentGoal.savedToDate + req.body.saved,
+        savedToDate: +currentGoal.savedToDate + +req.body.saved,
       },
       {
         patch: true,

@@ -1,15 +1,81 @@
 .card {
   &__list {
+    @extend .no-list-style;
+    @extend .add-border-radius;
+    @extend .add-shadow;
+    border-top: $border-accent 6px solid;
+
+    margin: spaceIncr(2);
+  }
+
+  &__item {
+    @extend .font-regular-lite-list;
+    padding: spaceIncr(2);
+    background-color: $menu-primary-background;
+  }
+  &__title__container {
+    @include flex(row, space-between);
+    padding: spaceIncr(1) spaceIncr(1);
+    border-bottom: $border 2px solid;
+    &--title {
+      margin: 0;
+    }
+  }
+
+  &__type__container {
+    @include flex(row, space-between);
+    padding: spaceIncr(1) spaceIncr(1);
+    &--type {
+      margin: 0;
+    }
+
+    &--Contributions {
+      @include flex();
+    }
   }
 }
 
 .card {
+  &__entries {
+    @include flex();
+    @extend .font-regular;
+  }
 }
 
 .card-section {
   @include flex(column, flex-start);
   padding: spaceIncr(4) spaceIncr(2);
   height: 100%;
-  width: 100%;
+  width: 19.1vw;
   overflow-y: scroll;
+
+  &__button--container {
+    @include flex();
+  }
+}
+
+.modal {
+  &__title {
+    @extend .font-button--secondary;
+  }
+
+  &__text {
+    @extend .font-regular-lite-modal;
+  }
+
+  &__btn {
+    @extend .btn-global;
+    @extend .font-button;
+    color: white;
+    background-color: #b1bfb4;
+    width: 60px;
+    height: 25px;
+
+    &:hover {
+      background-color: #97aa9c;
+    }
+    &--container {
+      @include flex(row, space-between);
+    }
+  }
 }

@@ -3,7 +3,7 @@ import Savings from "./Savings";
 import Expense from "./Expense";
 import Pet from "./newPet";
 
-export default function AddNewEntry() {
+export default function AddNewEntry({ getData }) {
   const [newGoal, newGoalShowing] = useState(false);
   const [newSave, newSaveShowing] = useState(false);
   const [newExp, newExpShowing] = useState(false);
@@ -41,9 +41,9 @@ export default function AddNewEntry() {
         </select>
       </form>
       <section className="addNewEntry__page--container">
-        {newGoal ? <Pet newPageShowing={newGoalShowing} /> : ""}
-        {newSave ? <Savings newPageShowing={newSaveShowing} /> : ""}
-        {newExp ? <Expense newPageShowing={newExpShowing} /> : ""}
+        {newGoal ? <Pet getData={getData} newPageShowing={newGoalShowing} /> : ""}
+        {newSave ? <Savings getData={getData} newPageShowing={newSaveShowing} /> : ""}
+        {newExp ? <Expense getData={getData} newPageShowing={newExpShowing} /> : ""}
       </section>
     </section>
   );
