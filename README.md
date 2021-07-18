@@ -1,13 +1,20 @@
 # Grow With Me
 
+This was a capstone project at my bootcamp course in September - December. 
+ 
+It would feature everything that I've learned thus far into a final completed project, this project uses mySQL for it's database and react.js for it's front-end framework.
+ 
+There were complications along the way such as spending too much time on the calendar component to work the way that I needed it to as it was imported from a library.
+In the future, I've determined that I would've had an easier time creating a calendar specifically for this project to function as I needed to and a lesson for myself not to focus too hard on this certain functionally when knowing there are other sections that may need more work. 
+ 
+Other complications were getting a grasp on mySQL and database building with bookshelf and knex. I had not known that most of where the functionally when generating content would come from the back-end, however in the end, I was able to create a fully optimizable generator but having to leave the evolution part for another day. 
+
+
+Would I go back on this project in the future? 
+Once I learn more, most definitely as my coding journey hasn't stopped since my bootcamp course in December. 
+
 Libraries/Dependancies Used: 
 React-Calendar
-
-Otherwise my application may not work D: 
-
-There's a few more steps before I can say this project is complete and a few more refactoring to do.
-
-I've spent a lot of my time learning how to use react-calendar for this application...I will need to do more to get it working the way I want it to.
 
 ## Installation
 This project uses the package manager yarn.
