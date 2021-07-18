@@ -1,6 +1,10 @@
 # Grow With Me
 
 This was a capstone project at my bootcamp course in September - December. 
+
+My idea was to create a budgeting application that would appeal to the younger generation and encourage them to save by gamifying the whole idea into something a bit more fun and interactive. 
+
+Rewarding the user for a healthy budging habit. 
  
 It would feature everything that I've learned thus far into a final completed project, this project uses mySQL for it's database and react.js for it's front-end framework.
  
