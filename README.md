@@ -1,5 +1,10 @@
 # Grow With Me
 
+![image](https://user-images.githubusercontent.com/71748268/185727820-8e61136c-f74b-4034-8aea-f814c53a4d29.png)
+![image](https://user-images.githubusercontent.com/71748268/185728949-23092419-883b-4b0c-920f-9ea210faf590.png)
+![image](https://user-images.githubusercontent.com/71748268/185728925-e4085831-f75c-47db-891d-7d2ce854612e.png)
+
+
 This was a capstone project at my bootcamp course in September - December. 
 
 My idea was to create a budgeting application that would appeal to the younger generation and encourage them to save by gamifying the whole idea into something a bit more fun and interactive. 
@@ -15,7 +20,18 @@ Other complications were getting a grasp on mySQL and database building with boo
 
 
 Would I go back on this project in the future? 
-Once I learn more, most definitely as my coding journey hasn't stopped since my bootcamp course in December. 
+Once I learn more... most definitely. 
+
+# Update: 2022-08-19
+
+Hello! I wanted to add some insights on this old project. 
+I still really adore this project and it's concept. Looking back at the code, I actually exclaimed outloud "Huh, that's weird. Why did I do that?"
+It's cool to see old projects and how much I've grown as a developer. 
+I might return on a lighter version of this project or on a different platform as it was originally designed for mobile!
+
+The number one thing I want to write is my own calendar instead of using a library/dependency. 
+I think I ran into so many problems with the code because the calendar wasn't bulit in, it wasn't as mutable and flexible as I wanted it to be.
+I hope to return to this someday!
 
 Libraries/Dependancies Used: 
 React-Calendar
